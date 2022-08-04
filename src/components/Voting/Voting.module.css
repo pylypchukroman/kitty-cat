@@ -1,0 +1,55 @@
+.navBar {
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-between;
+}
+
+.imageWrapper {
+  width: 640px;
+  height: 360px;
+  margin-top: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+.randomCat {
+  display: block;
+  height: 100%;
+  width: 100%;
+
+  object-fit: cover;
+}
+.votingPanel {
+  width: 256px;
+  height: 80px;
+  border: 4px solid #ffffff;
+  background-color: #ffffff;
+  border-radius: 20px;
+  overflow: hidden;
+  position: absolute;
+  top: 500px;
+  right: 270px;
+}
+.likeBtn {
+  width: 80px;
+  height: 80px;
+  background: #97eab9;
+  border: none;
+  margin-right: 4px;
+}
+.favouritesBtn {
+  width: 80px;
+  height: 80px;
+  background: #ff868e;
+  border: none;
+  margin-right: 4px;
+}
+.dislikeBtn {
+  width: 80px;
+  height: 80px;
+  background: #ffd280;
+  border: none;
+}
+.votingPanelIconImg {
+  width: 30px;
+  height: 30px;
+}
