@@ -3,13 +3,16 @@ import style from './Breeds.module.css';
 import sprite from '../../icons/sprite.svg';
 import { getBreeds } from 'utils/CatAPI';
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router';
+import HistoryBar from 'components/HistoryBar/HistoryBar';
+import { getSelectedBreed } from 'utils/CatAPI';
 
 const Breeds = () => {
+  let location = useLocation();
   const [breeds, setBreeds] = useState([]);
   const [limit, setLimit] = useState(10);
-  const [selectedBreed, setSelectedBreed] = useState('All breeds');
-
-  const breedsList = breeds.map(breed => breed.name);
+  const [selectedBreed, setSelectedBreed] = useState('');
+  const curlocation = location.pathname.replace('/', '');
 
   const changeLimit = newLimit => {
     setLimit(newLimit);
@@ -17,46 +20,36 @@ const Breeds = () => {
   const changeBreed = newBreed => {
     setSelectedBreed(newBreed);
   };
+  const handleSubmit = event => {
+    event.preventDefault();
+    getSelectedBreed(selectedBreed, limit).then(({ data }) => setBreeds(data));
+  };
 
   useEffect(() => {
     getBreeds(limit).then(({ data }) => setBreeds(data));
   }, [limit]);
 
-  function onBtnUpClick() {
-    console.log('click');
-  }
-
-  function onBtnDownClick() {
-    console.log('click');
-  }
-
+  console.log(breeds);
   return (
     <>
-      <SearchForm />
       <div className={style.navBar}>
-        <button type="button" className={style.returnBtnWrapper}>
-          <svg className={style.returnBtnImg}>
-            <use href={sprite + '#icon-back'}></use>
-          </svg>
-        </button>
-        <p className={style.navBarText}>BREEDS</p>
-
-        <form>
+        <HistoryBar currentLocation={curlocation} />
+        <form onSubmit={handleSubmit}>
           <label>
-            <select
-              className={style.breedsSelect}
+            <input
+              type="text"
+              className={style.searchInpute}
+              placeholder="Search for breeds by name"
               onChange={event => changeBreed(event.target.value)}
-              value={selectedBreed}
-            >
-              <option value="All breeds">All Breeds</option>
-              {breedsList &&
-                breedsList.map(breed => (
-                  <option value={breed} key={breed}>
-                    {breed}
-                  </option>
-                ))}
-            </select>
+            />
+            <button type="button" className={style.searchInnerBtnWrapper}>
+              <svg className={style.searchInnerBtn}>
+                <use href={sprite + '#icon-search'}></use>
+              </svg>
+            </button>
           </label>
+        </form>
+        <form>
           <label>
             <select
               className={style.limitSelect}
@@ -70,35 +63,12 @@ const Breeds = () => {
             </select>
           </label>
         </form>
-        <button
-          type="button"
-          className={style.sortUpBtn}
-          onClick={onBtnUpClick}
-        >
-          <svg className={style.sortUpImg}>
-            <use href={sprite + '#icon-sort-up'}></use>
-          </svg>
-        </button>
-        <button
-          type="button"
-          className={style.sortUpBtn}
-          onClick={onBtnDownClick}
-        >
-          <svg className={style.sortUpImg}>
-            <use href={sprite + '#icon-sort-up'}></use>
-          </svg>
-        </button>
       </div>
       <ul className={style.breedsGallery}>
         {breeds &&
           breeds.map(breed => (
             <li key={breed.id}>
-              <img
-                src={breed.image.url}
-                alt={breed.name}
-                width="200"
-                height="200"
-              />
+              <img src={breed.url} alt={breed.name} width="200" height="200" />
             </li>
           ))}
       </ul>

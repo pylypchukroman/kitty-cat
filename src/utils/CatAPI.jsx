@@ -4,11 +4,7 @@ export { voteUp };
 export { voteDown };
 export { favouriteImage };
 export { getBreeds };
-
-// axios.defaults.baseURL = 'https://api.thecatapi.com/v1';
-// axios.defaults.params = {
-//   api_key: 'f11dde38-88b4-44d1-a4e6-d83224e6352d',
-// };
+export { getSelectedBreed };
 
 axios.defaults.baseURL = 'https://api.thecatapi.com/v1';
 axios.defaults.headers.common['x-api-key'] =
@@ -48,6 +44,13 @@ async function favouriteImage(imageId, userId) {
 }
 
 async function getBreeds(limit) {
-  const response = await axios.get(`/breeds?limit=${limit}`);
+  const response = await axios.get(`/images/search?limit=${limit}`);
+  return response;
+}
+
+async function getSelectedBreed(breed, limit) {
+  const response = await axios.get(
+    `/images/search?limit=${limit}&breed_ids=${breed}`
+  );
   return response;
 }
