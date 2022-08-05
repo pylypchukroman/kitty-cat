@@ -1,5 +1,6 @@
 .navBar {
   display: flex;
+
   margin-top: 30px;
   background: #ffffff;
   height: 500px;
@@ -7,6 +8,10 @@
   padding: 20px;
   flex-direction: column;
   width: 680px;
+}
+.navWrapper {
+  display: flex;
+  justify-content: space-between;
 }
 
 .returnBtnWrapper {
@@ -97,4 +102,8 @@
 }
 .breedAndLimit {
   display: flex;
+}
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
 }
