@@ -1,9 +1,7 @@
 .navBar {
   display: flex;
-
   margin-top: 30px;
   background: #ffffff;
-  height: 500px;
   border-radius: 20px;
   padding: 20px;
   flex-direction: column;
@@ -94,8 +92,6 @@
   border-radius: 10px;
   border: none;
 }
-.typeSelect {
-}
 .orderAndType {
   display: flex;
   margin-bottom: 10px;
@@ -104,6 +100,57 @@
   display: flex;
 }
 .gallery {
-  display: flex;
-  flex-wrap: wrap;
+  gap: 20px;
+  counter-reset: li;
+  display: grid;
+  grid-auto-rows: 140px;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 20px;
+}
+.item:nth-child(1) {
+  grid-column: auto/span 1;
+  grid-row: auto/span 2;
+}
+.item:nth-child(4) {
+  grid-column: auto/span 2;
+  grid-row: auto/span 2;
+}
+.item:nth-child(8) {
+  grid-column: auto/span 1;
+  grid-row: auto/span 2;
+}
+.item:nth-child(9) {
+  grid-column: auto/span 2;
+  grid-row: auto/span 2;
+}
+.item:nth-child(11) {
+  grid-column: auto/span 1;
+  grid-row: auto/span 2;
+}
+.item:nth-child(14) {
+  grid-column: auto/span 2;
+  grid-row: auto/span 2;
+}
+.item:nth-child(18) {
+  grid-column: auto/span 1;
+  grid-row: auto/span 2;
+}
+.item:nth-child(19) {
+  grid-column: auto/span 2;
+  grid-row: auto/span 2;
+}
+.item {
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+.item:hover {
+  transform: scale(1.07);
+}
+.galleryImg {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  object-position: right;
+  width: 100%;
 }

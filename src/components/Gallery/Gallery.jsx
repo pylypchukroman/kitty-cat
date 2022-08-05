@@ -10,7 +10,7 @@ const Gallery = () => {
   const curlocation = location.pathname.replace('/', '');
   const [order, setOrder] = useState('random');
   const [type, setType] = useState('all');
-  const [limit, setLimit] = useState('10');
+  const [limit, setLimit] = useState('20');
   const [gallery, setGallery] = useState([]);
 
   const changeLimit = newLimit => {
@@ -102,8 +102,14 @@ const Gallery = () => {
         <ul className={style.gallery}>
           {gallery &&
             gallery.map(item => (
-              <li key={item.id}>
-                <img src={item.url} width="200" height="200" alt={item.name} />
+              <li key={item.id} className={style.item}>
+                <img
+                  className={style.galleryImg}
+                  src={item.url}
+                  width="100%"
+                  height="100%"
+                  alt={item.name}
+                />
               </li>
             ))}
         </ul>
