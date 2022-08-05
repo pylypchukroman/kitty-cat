@@ -72,9 +72,25 @@
   border-radius: 20px;
   overflow: hidden;
   transition: all 0.5s;
+  position: relative;
 }
 .item:hover {
   transform: scale(1.07);
+}
+.item:hover > .selectedBreedText {
+  display: flex;
+}
+.item:hover > .BreedsGalleryImg {
+  -webkit-mask-image: radial-gradient(
+    circle at 50% 50%,
+    red 60%,
+    rgba(200, 0, 0, 0.4) 40%
+  );
+  mask-image: radial-gradient(
+    circle at 50% 60%,
+    black 50%,
+    rgba(0, 0, 0, 0.6) 50%
+  );
 }
 .BreedsGalleryImg {
   display: block;
@@ -141,4 +157,24 @@
 .searchInnerBtn {
   width: 20px;
   height: 20px;
+}
+.selectedBreedText {
+  background-color: fuchsia;
+  width: 180px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px 42px;
+  background: #ffffff;
+  border-radius: 10px;
+  font-family: 'Jost';
+  font-size: 16px;
+  line-height: 24px;
+  color: #ff868e;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
 }

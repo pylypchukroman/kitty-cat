@@ -81,7 +81,7 @@ const Breeds = () => {
                     width="200"
                     height="200"
                   />
-                  <p>{breed.id}</p>
+                  <b className={style.selectedBreedText}>{breed.id}</b>
                 </li>
               ))
             : selectedBreedList.map(selectedOneBreed => (
@@ -90,10 +90,10 @@ const Breeds = () => {
                     className={style.BreedsGalleryImg}
                     src={selectedOneBreed.url}
                     alt={selectedOneBreed.breeds[0].id}
-                    width="200"
-                    height="200"
                   />
-                  <p>{selectedOneBreed.breeds[0].id}</p>
+                  <b className={style.selectedBreedText}>
+                    {selectedOneBreed.breeds[0].id}
+                  </b>
                 </li>
               ))}
         </ul>
