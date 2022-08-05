@@ -44,7 +44,7 @@ async function favouriteImage(imageId, userId) {
 }
 
 async function getBreeds(limit) {
-  const response = await axios.get(`/images/search?limit=${limit}`);
+  const response = await axios.get(`/breeds?limit=${limit}`);
   return response;
 }
 

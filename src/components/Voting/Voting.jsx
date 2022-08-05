@@ -1,5 +1,4 @@
 import style from './Voting.module.css';
-import sprite from '../../icons/sprite.svg';
 import spriteWhite from '../../icons/sprit-white.svg';
 import ReactionNav from '../ReactionNav/ReactionNav';
 import { getRandomCat } from '../../utils/CatAPI';
