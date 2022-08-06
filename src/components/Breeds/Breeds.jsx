@@ -74,23 +74,27 @@ const Breeds = () => {
           {selectedBreedList.length < 1
             ? breeds.map(breed => (
                 <li key={breed.id} className={style.item}>
-                  <img
-                    className={style.BreedsGalleryImg}
-                    src={breed.image.url}
-                    alt={breed.name}
-                    width="200"
-                    height="200"
-                  />
+                  <div className={style.imgWrapper}>
+                    <img
+                      className={style.BreedsGalleryImg}
+                      src={breed.image.url}
+                      alt={breed.name}
+                      width="200"
+                      height="200"
+                    />
+                  </div>
                   <b className={style.selectedBreedText}>{breed.id}</b>
                 </li>
               ))
             : selectedBreedList.map(selectedOneBreed => (
                 <li key={selectedOneBreed.id} className={style.item}>
-                  <img
-                    className={style.BreedsGalleryImg}
-                    src={selectedOneBreed.url}
-                    alt={selectedOneBreed.breeds[0].id}
-                  />
+                  <div className={style.imgWrapper}>
+                    <img
+                      className={style.BreedsGalleryImg}
+                      src={selectedOneBreed.url}
+                      alt={selectedOneBreed.breeds[0].id}
+                    />
+                  </div>
                   <b className={style.selectedBreedText}>
                     {selectedOneBreed.breeds[0].id}
                   </b>

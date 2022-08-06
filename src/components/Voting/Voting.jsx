@@ -40,40 +40,42 @@ const Voting = () => {
   return (
     <>
       <div className={style.navBar}>
-        <HistoryBar currentLocation={curlocation} />
-        <ReactionNav />
-      </div>
-      <div className={style.imageWrapper}>
-        <img className={style.randomCat} src={cat.url} alt="" />
-      </div>
-      <div className={style.votingPanel}>
-        <button
-          className={style.likeBtn}
-          type="button"
-          onClick={onLikeBtnClick}
-        >
-          <svg className={style.votingPanelIconImg}>
-            <use href={spriteWhite + '#icon-like-white-30'}></use>
-          </svg>
-        </button>
-        <button
-          className={style.favouritesBtn}
-          type="button"
-          onClick={onfavouritesBtnClick}
-        >
-          <svg className={style.votingPanelIconImg}>
-            <use href={spriteWhite + '#icon-fav-white-30'}></use>
-          </svg>
-        </button>
-        <button
-          className={style.dislikeBtn}
-          type="button"
-          onClick={onDislikeBtnClick}
-        >
-          <svg className={style.votingPanelIconImg}>
-            <use href={spriteWhite + '#icon-dislike-white-30'}></use>
-          </svg>
-        </button>
+        <div className={style.navBarWrapper}>
+          <HistoryBar currentLocation={curlocation} />
+          <ReactionNav />
+        </div>
+        <div className={style.imageWrapper}>
+          <img className={style.randomCat} src={cat.url} alt="" />
+        </div>
+        <div className={style.votingPanel}>
+          <button
+            className={style.likeBtn}
+            type="button"
+            onClick={onLikeBtnClick}
+          >
+            <svg className={style.votingPanelIconImg}>
+              <use href={spriteWhite + '#icon-like-white-30'}></use>
+            </svg>
+          </button>
+          <button
+            className={style.favouritesBtn}
+            type="button"
+            onClick={onfavouritesBtnClick}
+          >
+            <svg className={style.votingPanelIconImg}>
+              <use href={spriteWhite + '#icon-fav-white-30'}></use>
+            </svg>
+          </button>
+          <button
+            className={style.dislikeBtn}
+            type="button"
+            onClick={onDislikeBtnClick}
+          >
+            <svg className={style.votingPanelIconImg}>
+              <use href={spriteWhite + '#icon-dislike-white-30'}></use>
+            </svg>
+          </button>
+        </div>
       </div>
     </>
   );

@@ -1,4 +1,4 @@
-.searchBtn {
+.reactionBtn {
   width: 50px;
   height: 50px;
   background: #ffffff;
@@ -6,8 +6,13 @@
   outline: none;
   border: none;
   margin-right: 10px;
+  border: 2px solid #ff868e;
+  cursor: pointer;
 }
-.searchBtnImg {
+.reactionBtn:hover {
+  background: #fbe0dc;
+}
+.reactionBtnImg {
   width: 30px;
   height: 30px;
 }
