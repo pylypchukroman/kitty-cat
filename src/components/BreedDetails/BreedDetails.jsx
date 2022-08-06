@@ -59,17 +59,34 @@ const Breed = () => {
           </div>
         </div>
         <div className={style.breedInfornation}>
-          <h2>{breedInfo.name}</h2>
-          <p>{breedInfo.description}</p>
+          <div className={style.titleWrapper}>
+            <h2 className={style.name}>{breedInfo.name}</h2>
+          </div>
+          <p className={style.description}>{breedInfo.description}</p>
           <ul className={style.list}>
             <li className={style.infoItem}>
-              Temperament:
-              <p>{breedInfo.temperament}</p>
+              <p className={style.title}>Temperament: </p>
+              <p className={style.infoDescription}>{breedInfo.temperament}</p>
             </li>
             <li className={style.infoItem}>
-              <p>Origin: {breedInfo.origin}</p>
-              <p>Weight: {weight} kgs</p>
-              <p>Life span: {breedInfo.life_span} years</p>
+              <p className={style.title}>
+                Origin:
+                <span className={style.infoDescription}>
+                  {' ' + breedInfo.origin}
+                </span>
+              </p>
+              <p className={style.title}>
+                Weight:
+                <span className={style.infoDescription}>
+                  {' ' + weight} kgs
+                </span>
+              </p>
+              <p className={style.title}>
+                Life span:
+                <span className={style.infoDescription}>
+                  {' ' + breedInfo.life_span} years
+                </span>
+              </p>
             </li>
           </ul>
         </div>

@@ -6,7 +6,6 @@
   border-radius: 10px;
   padding: 20px;
   position: relative;
-  padding-bottom: 60px;
 }
 .navBarWrapper {
   background: #ffffff;
@@ -14,7 +13,6 @@
   width: 100%;
 }
 .imageWrapper {
-  width: 640px;
   height: 360px;
   margin-top: 20px;
   height: 400px;
@@ -34,8 +32,8 @@
   margin-top: 50px;
   border: 2px solid #fbe0dc;
   border-radius: 20px;
-  width: 640px;
-  height: 205px;
+  height: 250px;
+  position: relative;
 }
 .list {
   display: flex;
@@ -43,5 +41,60 @@
 }
 .infoItem {
   width: 40%;
-  border: 1px solid red;
+}
+.name {
+  font-family: 'Jost';
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 52px;
+  color: #1d1d1d;
+}
+.titleWrapper {
+  min-width: 200px;
+  border: 2px solid #fbe0dc;
+  border-radius: 20px;
+  background: #ffffff;
+  padding: 5px 40px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: inline-block;
+  position: absolute;
+  left: 5%;
+  /* transform: translateX(-55%); */
+  top: -13%;
+}
+.description {
+  margin: 0 auto;
+  padding: 10px 20px;
+  text-align: center;
+  margin-top: 40px;
+  font-family: 'Jost';
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+  color: #8c8c8c;
+  overflow: scroll;
+  height: 90px;
+}
+.title {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 23px;
+
+  color: #1d1d1d;
+
+  margin-bottom: 10px;
+}
+.infoDescription {
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+
+  color: #8c8c8c;
 }
