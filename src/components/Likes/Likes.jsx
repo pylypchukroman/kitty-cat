@@ -1,5 +1,4 @@
 import style from './Likes.module.css';
-import { getBreeds } from 'utils/CatAPI';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 import HistoryBar from 'components/HistoryBar/HistoryBar';

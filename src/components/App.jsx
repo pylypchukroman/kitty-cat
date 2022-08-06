@@ -1,5 +1,4 @@
 import styles from './App.module.css';
-
 import { lazy, Suspense } from 'react';
 import { Redirect, Route, Switch } from 'react-router';
 
@@ -12,6 +11,9 @@ const FavouritesPage = lazy(() =>
   import('../pages/FavouritesPage/FavouritesPage')
 );
 const DislikePage = lazy(() => import('../pages/DislikesPage/DislikesPage'));
+const BreedDetailsPage = lazy(() =>
+  import('../pages/BreedDetailsPage/BreedDetailsPage')
+);
 
 export const App = () => {
   return (
@@ -24,7 +26,7 @@ export const App = () => {
           <Route path="/voting">
             <VotingPage />
           </Route>
-          <Route path="/breeds">
+          <Route exact path="/breeds">
             <BreedsPage />
           </Route>
           <Route path="/gallery">
@@ -38,6 +40,9 @@ export const App = () => {
           </Route>
           <Route path="/dislikes">
             <DislikePage />
+          </Route>
+          <Route path="/breeds/:breedId">
+            <BreedDetailsPage />
           </Route>
           <Redirect to="/" />
         </Switch>

@@ -1,11 +1,6 @@
 import styles from './ReactionNav.module.css';
 import sprite from '../../icons/sprite.svg';
 import { Link, NavLink } from 'react-router-dom';
-import { Suspense } from 'react';
-import { Route, Switch } from 'react-router';
-import LikesPage from 'pages/LikesPage/LikesPage';
-import DislikePage from 'pages/DislikesPage/DislikesPage';
-import FavouritesPage from 'pages/FavouritesPage/FavouritesPage';
 
 const ReactionNav = () => {
   return (

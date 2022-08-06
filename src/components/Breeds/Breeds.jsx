@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 import HistoryBar from 'components/HistoryBar/HistoryBar';
 import { getSelectedBreed } from 'utils/CatAPI';
+import { Link } from 'react-router-dom';
 
 const Breeds = () => {
   let location = useLocation();
@@ -35,6 +36,7 @@ const Breeds = () => {
     getBreeds(limit).then(({ data }) => setBreeds(data));
   }, [limit]);
 
+  console.log(breeds);
   return (
     <>
       <div className={style.navBar}>
@@ -74,16 +76,23 @@ const Breeds = () => {
           {selectedBreedList.length < 1
             ? breeds.map(breed => (
                 <li key={breed.id} className={style.item}>
-                  <div className={style.imgWrapper}>
-                    <img
-                      className={style.BreedsGalleryImg}
-                      src={breed.image.url}
-                      alt={breed.name}
-                      width="200"
-                      height="200"
-                    />
-                  </div>
-                  <b className={style.selectedBreedText}>{breed.id}</b>
+                  <Link
+                    to={{
+                      pathname: `/breeds/${breed.id}`,
+                      state: { from: { location } },
+                    }}
+                  >
+                    <div className={style.imgWrapper}>
+                      <img
+                        className={style.BreedsGalleryImg}
+                        src={breed.image.url}
+                        alt={breed.name}
+                        width="200"
+                        height="200"
+                      />
+                    </div>
+                    <b className={style.selectedBreedText}>{breed.id}</b>
+                  </Link>
                 </li>
               ))
             : selectedBreedList.map(selectedOneBreed => (
