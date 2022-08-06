@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 import HistoryBar from 'components/HistoryBar/HistoryBar';
 import { getFavourite } from 'utils/CatAPI';
+import ReactionNav from 'components/ReactionNav/ReactionNav';
 
 const Favourites = () => {
   let location = useLocation();
@@ -19,6 +20,7 @@ const Favourites = () => {
       <div className={style.navBar}>
         <div className={style.wrapper}>
           <HistoryBar currentLocation={curlocation} />
+          <ReactionNav />
         </div>
         <ul className={style.breedsGallery}>
           {breeds.map(breed => (

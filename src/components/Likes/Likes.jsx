@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 import HistoryBar from 'components/HistoryBar/HistoryBar';
 import { getAllReactions } from 'utils/CatAPI';
+import ReactionNav from 'components/ReactionNav/ReactionNav';
 
 const Likes = () => {
   let location = useLocation();
@@ -22,6 +23,7 @@ const Likes = () => {
       <div className={style.navBar}>
         <div className={style.wrapper}>
           <HistoryBar currentLocation={curlocation} />
+          <ReactionNav />
         </div>
         <ul className={style.breedsGallery}>
           {breeds.map(breed => (

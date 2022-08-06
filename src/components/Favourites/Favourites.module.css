@@ -6,6 +6,7 @@
 .wrapper {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .returnBtnWrapper {
   width: 40px;
