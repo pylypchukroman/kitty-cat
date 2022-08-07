@@ -67,6 +67,9 @@
 .item:hover > .selectedBreedText {
   display: flex;
 }
+.imgWrapper {
+  height: 100%;
+}
 .BreedsGalleryImg {
   display: block;
   height: 100%;
