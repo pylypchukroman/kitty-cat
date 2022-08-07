@@ -76,7 +76,9 @@ const Breeds = () => {
           {selectedBreedList.length < 1
             ? breeds.map(breed => (
                 <li key={breed.id} className={style.item}>
+                  <b className={style.selectedBreedText}>{breed.id}</b>
                   <Link
+                    className={style.list}
                     to={{
                       pathname: `/breeds/${breed.id}`,
                       state: { from: { location } },
@@ -91,12 +93,14 @@ const Breeds = () => {
                         height="200"
                       />
                     </div>
-                    <b className={style.selectedBreedText}>{breed.id}</b>
                   </Link>
                 </li>
               ))
             : selectedBreedList.map(selectedOneBreed => (
                 <li key={selectedOneBreed.id} className={style.item}>
+                  <b className={style.selectedBreedText}>
+                    {selectedOneBreed.breeds[0].id}
+                  </b>
                   <div className={style.imgWrapper}>
                     <img
                       className={style.BreedsGalleryImg}
@@ -104,9 +108,6 @@ const Breeds = () => {
                       alt={selectedOneBreed.breeds[0].id}
                     />
                   </div>
-                  <b className={style.selectedBreedText}>
-                    {selectedOneBreed.breeds[0].id}
-                  </b>
                 </li>
               ))}
         </ul>
