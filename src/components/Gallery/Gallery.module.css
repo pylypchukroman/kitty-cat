@@ -48,10 +48,22 @@
   border-radius: 10px;
   border: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: all 0.5s;
+}
+.upoadBtn:hover {
+  background-color: #ff868e;
+}
+.upoadBtn:hover > .uloadBtnText {
+  color: #fff;
+}
+.upoadBtn:hover > .uploadIcon {
+  fill: #fff;
+  transform: scale(1.1);
 }
 .uploadIcon {
   width: 16px;
   height: 16px;
+  fill: #ff868e;
 }
 .uloadBtnText {
   font-weight: 500;
@@ -60,6 +72,35 @@
   text-align: center;
   letter-spacing: 2px;
   color: #ff868e;
+  margin-left: 10px;
+}
+.buttonsWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.reloadBtnIcon {
+  width: 16px;
+  height: 16px;
+  transition: all 0.5s;
+  fill: #ff868e;
+}
+.reloadBtn:hover > .reloadBtnIcon {
+  transform: rotate(360deg);
+}
+.reloadBtn:hover > .reloadBtnIcon {
+  fill: #fff;
+}
+.reloadBtn:hover {
+  background-color: #ff868e;
+}
+.reloadBtn {
+  width: 40px;
+  height: 40px;
+  background: #fbe0dc;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-left: 10px;
 }
 .selectWrapper {
@@ -91,6 +132,7 @@
   border: none;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   padding: 5px 10px;
+  outline: none;
 }
 .orderAndType {
   display: flex;
@@ -153,4 +195,9 @@
   object-fit: cover;
   object-position: right;
   width: 100%;
+}
+.emptyGalleryMsg {
+  width: 100%;
+  border: 1px solid red;
+  width: 30px;
 }
