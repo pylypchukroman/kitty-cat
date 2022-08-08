@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom';
 
 const HistoryBar = ({ currentLocation }) => {
   const history = useHistory();
+  const location = currentLocation.split('/')[0];
   return (
     <div className={styles.historyBarWrapper}>
       <button
@@ -15,7 +16,7 @@ const HistoryBar = ({ currentLocation }) => {
           <use href={sprite + '#icon-back'}></use>
         </svg>
       </button>
-      <p className={styles.navBarText}>{currentLocation}</p>
+      <p className={styles.navBarText}>{location}</p>
     </div>
   );
 };
