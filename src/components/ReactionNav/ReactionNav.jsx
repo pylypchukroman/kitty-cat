@@ -4,27 +4,33 @@ import { NavLink } from 'react-router-dom';
 
 const ReactionNav = () => {
   return (
-    <div>
-      <NavLink to="/likes" activeClassName={styles.activ}>
-        <button type="button" className={styles.reactionBtn}>
-          <svg className={styles.reactionBtnImg}>
-            <use href={sprite + '#icon-like'}></use>
-          </svg>
-        </button>
+    <div className={styles.wrapper}>
+      <NavLink
+        to="/likes"
+        className={styles.linkLikes}
+        activeClassName={styles.activLike}
+      >
+        <svg className={styles.reactionIconLikes}>
+          <use href={sprite + '#icon-like'}></use>
+        </svg>
       </NavLink>
-      <NavLink to="/favourites" activeClassName={styles.activ}>
-        <button type="button" className={styles.reactionBtn}>
-          <svg className={styles.reactionBtnImg}>
-            <use href={sprite + '#icon-heart'}></use>
-          </svg>
-        </button>
+      <NavLink
+        to="/favourites"
+        className={styles.linkFavourites}
+        activeClassName={styles.activFavourites}
+      >
+        <svg className={styles.reactionIconFafourites}>
+          <use href={sprite + '#icon-heart'}></use>
+        </svg>
       </NavLink>
-      <NavLink to="/dislikes" activeClassName={styles.activ}>
-        <button type="button" className={styles.reactionBtn}>
-          <svg className={styles.reactionBtnImg}>
-            <use href={sprite + '#icon-dislike'}></use>
-          </svg>
-        </button>
+      <NavLink
+        to="/dislikes"
+        className={styles.linkDislike}
+        activeClassName={styles.activDislikes}
+      >
+        <svg className={styles.reactionIconDislikes}>
+          <use href={sprite + '#icon-dislike'}></use>
+        </svg>
       </NavLink>
     </div>
   );
