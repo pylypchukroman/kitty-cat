@@ -12,7 +12,14 @@
 .reactionBtn:hover {
   background: #fbe0dc;
 }
+.reactionBtn:hover .reactionBtn {
+  stroke: azure;
+}
 .reactionBtnImg {
   width: 30px;
   height: 30px;
+  fill: #ff868e;
+}
+.activ > .reactionBtn {
+  border: 2px solid red;
 }

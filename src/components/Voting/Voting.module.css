@@ -3,7 +3,7 @@
   justify-content: space-between;
   flex-direction: column;
   background: #ffffff;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 20px;
   position: relative;
   padding-bottom: 60px;
@@ -15,7 +15,7 @@
   border-radius: 10px;
 }
 .imageWrapper {
-  width: 640px;
+  width: 100%;
   height: 360px;
   margin-top: 20px;
   border-radius: 20px;
@@ -46,6 +46,28 @@
   background: #97eab9;
   border: none;
   margin-right: 4px;
+}
+.votingPanelIconImg {
+  fill: #fff;
+}
+.likeBtn:hover {
+  background: rgba(151, 234, 185, 0.3);
+}
+.likeBtn:hover > .votingPanelIconImg {
+  fill: #97eab9;
+}
+
+.dislikeBtn:hover {
+  background: rgba(255, 210, 128, 0.3);
+}
+.dislikeBtn:hover > .votingPanelIconImg {
+  fill: #ffd280;
+}
+.favouritesBtn:hover {
+  background: rgba(255, 134, 142, 0.3);
+}
+.favouritesBtn:hover > .votingPanelIconImg {
+  fill: #ff868e;
 }
 .favouritesBtn {
   width: 80px;

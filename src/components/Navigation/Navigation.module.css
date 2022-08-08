@@ -35,7 +35,7 @@
 }
 .linkText {
   display: block;
-  width: 138px;
+  width: 100%;
   height: 36px;
   margin: 0;
   margin-top: 10px;
@@ -56,9 +56,12 @@
 }
 
 .activeLink {
-  border: 4px solid red;
+  border: 4px solid #fbe0dc;
 }
-
+.activeLink > .linkText {
+  background: #ff868e;
+  color: #ffffff;
+}
 .heroText {
   margin-top: 178px;
   margin-bottom: 10px;
@@ -67,7 +70,7 @@
   line-height: 1.32;
 }
 .subText {
-  margin-bottom: 60px;
+  margin-bottom: 80px;
 
   font-weight: 400;
   font-size: 20px;
@@ -82,4 +85,10 @@
 }
 .linkWrapper {
   display: flex;
+}
+.logo {
+  transition: all 0.5s;
+}
+.logo:hover {
+  transform: scale(1.07);
 }

@@ -10,35 +10,40 @@ const Navigation = () => {
   return (
     <nav className={styles.nav}>
       <NavLink exact to="/">
-        <img src={catImg} alt="" width="50" height="33" />
+        <img
+          className={styles.logo}
+          src={catImg}
+          alt=""
+          width="50"
+          height="33"
+        />
       </NavLink>
-      <h2 className={styles.heroText}>Hi intern!</h2>
-      <p className={styles.subText}>Welcome to MI 2022 Front-end test</p>
-      <p className={styles.apiText}>Lets start using The Cat API</p>
+      <h2 className={styles.heroText}>Hi cat lover!</h2>
+      <p className={styles.subText}>Welcome to cat aplication</p>
       <div className={styles.linkWrapper}>
         <NavLink
-          className={(styles.link, styles.votingBcg)}
+          className={styles.votingBcg}
           activeClassName={styles.activeLink}
           to="/voting"
         >
           <img className={styles.votingImg} src={votingImg} alt="" />
-          <p className={styles.linkText}>voting</p>
+          <p className={styles.linkText}>VOTING</p>
         </NavLink>
         <NavLink
-          className={(styles.link, styles.breedsBcg)}
+          className={styles.breedsBcg}
           activeClassName={styles.activeLink}
           to="/breeds"
         >
           <img className={styles.votingImg} src={breedsImg} alt="" />
-          <p className={styles.linkText}>breed</p>
+          <p className={styles.linkText}>BREEDS</p>
         </NavLink>
         <NavLink
-          className={(styles.link, styles.galleryBcg)}
+          className={styles.galleryBcg}
           activeClassName={styles.activeLink}
           to="/gallery"
         >
           <img className={styles.votingImg} src={galleryImg} alt="" />
-          <p className={styles.linkText}>gallery</p>
+          <p className={styles.linkText}>GALLERY</p>
         </NavLink>
       </div>
     </nav>

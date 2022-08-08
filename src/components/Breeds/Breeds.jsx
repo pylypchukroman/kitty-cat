@@ -42,8 +42,8 @@ const Breeds = () => {
       <div className={style.navBar}>
         <div className={style.wrapper}>
           <HistoryBar currentLocation={curlocation} />
-          <form onSubmit={handleSubmit}>
-            <label>
+          <div className={style.formWrapper}>
+            <form onSubmit={handleSubmit} className={style.form}>
               <input
                 type="text"
                 className={style.searchInpute}
@@ -55,10 +55,8 @@ const Breeds = () => {
                   <use href={sprite + '#icon-search'}></use>
                 </svg>
               </button>
-            </label>
-          </form>
-          <form>
-            <label>
+            </form>
+            <form>
               <select
                 className={style.limitSelect}
                 onChange={event => changeLimit(event.target.value)}
@@ -69,8 +67,8 @@ const Breeds = () => {
                 <option value="15">Limit: 15</option>
                 <option value="20">Limit: 20</option>
               </select>
-            </label>
-          </form>
+            </form>
+          </div>
         </div>
         <ul className={style.breedsGallery}>
           {selectedBreedList.length < 1

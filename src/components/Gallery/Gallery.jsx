@@ -42,8 +42,8 @@ const Gallery = () => {
         <div className={style.selectWrapper}>
           <div className={style.orderAndType}>
             <form>
-              <label className={style.orderForm}>
-                <span className={style.FormText}>ORDER</span>
+              <label className={style.label}>
+                ORDER
                 <select
                   className={style.Select}
                   onChange={event => changeOrder(event.target.value)}
@@ -56,8 +56,8 @@ const Gallery = () => {
               </label>
             </form>
             <form>
-              <label className={style.typeForm}>
-                <span className={style.FormText}>TYPE</span>
+              <label className={style.label}>
+                TYPE
                 <select
                   className={style.Select}
                   onChange={event => changeType(event.target.value)}
@@ -72,8 +72,8 @@ const Gallery = () => {
           </div>
           <div className={style.breedAndLimit}>
             <form>
-              <label className={style.orderForm}>
-                <span className={style.FormText}>BREED</span>
+              <label className={style.label}>
+                BREED
                 <select className={style.Select}>
                   <option value="none">None</option>
                   <option value="abyssinian">Abyssinian</option>
@@ -83,8 +83,8 @@ const Gallery = () => {
               </label>
             </form>
             <form>
-              <label className={style.typeForm}>
-                <span className={style.FormText}>LIMIT</span>
+              <label className={style.label}>
+                LIMIT
                 <select
                   className={style.Select}
                   onChange={event => changeLimit(event.target.value)}

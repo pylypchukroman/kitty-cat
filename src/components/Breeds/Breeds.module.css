@@ -2,10 +2,12 @@
   background: #ffffff;
   border-radius: 20px;
   padding: 20px;
+  width: 680px;
 }
 .wrapper {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .returnBtnWrapper {
   width: 40px;
@@ -150,6 +152,12 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   cursor: pointer;
 }
+.formWrapper {
+  display: flex;
+}
+.form {
+  position: relative;
+}
 .searchInnerBtnWrapper {
   width: 30px;
   height: 30px;
@@ -157,8 +165,9 @@
   border: none;
   background: #fbe0dc;
   border-radius: 10px;
-  top: 55px;
-  right: 185px;
+  top: 12%;
+  right: 5%;
+  pointer-events: none;
 }
 .searchInnerBtn {
   width: 15px;
