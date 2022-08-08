@@ -5,6 +5,20 @@ import sprite from '../../icons/sprite.svg';
 import { useEffect, useState } from 'react';
 import { getGallery } from 'utils/CatAPI';
 import { getAllBreeds } from 'utils/CatAPI';
+import { Audio } from 'react-loader-spinner';
+// import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+
+{
+  /* <Audio
+  height="100"
+  width="100"
+  color="red"
+  ariaLabel="audio-loading"
+  wrapperStyle={{}}
+  wrapperClass="wrapper-class"
+  visible={true}
+/>; */
+}
 
 const Gallery = () => {
   let location = useLocation();
@@ -15,6 +29,9 @@ const Gallery = () => {
   const [breed, setBreed] = useState('');
   const [gallery, setGallery] = useState([]);
   const [breedsList, setBreedsList] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  console.log(isLoading);
 
   const changeLimit = newLimit => {
     setLimit(newLimit);
@@ -29,11 +46,19 @@ const Gallery = () => {
     setBreed(newBreed);
   };
   const reloadPage = () => {
-    getGallery(type, order, limit).then(({ data }) => setGallery(data));
+    setIsLoading(false);
+    getGallery(type, order, limit, breed).then(({ data }) => {
+      setGallery(data);
+      setIsLoading(true);
+    });
   };
   useEffect(() => {
+    setIsLoading(false);
     getAllBreeds().then(({ data }) => setBreedsList(data.map(breed => breed)));
-    getGallery(type, order, limit, breed).then(({ data }) => setGallery(data));
+    getGallery(type, order, limit, breed).then(({ data }) => {
+      setGallery(data);
+      setIsLoading(true);
+    });
   }, [type, order, limit, breed]);
 
   return (
@@ -125,20 +150,33 @@ const Gallery = () => {
             </form>
           </div>
         </div>
-        <ul className={style.gallery}>
-          {gallery &&
-            gallery.map(item => (
-              <li key={item.id} className={style.item}>
-                <img
-                  className={style.galleryImg}
-                  src={item.url}
-                  width="100%"
-                  height="100%"
-                  alt={item.name}
-                />
-              </li>
-            ))}
-        </ul>
+        {isLoading ? (
+          <ul className={style.gallery}>
+            {gallery &&
+              gallery.map(item => (
+                <li key={item.id} className={style.item}>
+                  <img
+                    loading="lazy"
+                    className={style.galleryImg}
+                    src={item.url}
+                    width="100%"
+                    height="100%"
+                    alt={item.name}
+                  />
+                </li>
+              ))}
+          </ul>
+        ) : (
+          <div className={style.loaderWrapper}>
+            <Audio
+              height="100"
+              width="100"
+              color="#ff868e"
+              ariaLabel="loading"
+              visible={true}
+            />
+          </div>
+        )}
       </div>
     </>
   );

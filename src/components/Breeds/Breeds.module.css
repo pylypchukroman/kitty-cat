@@ -168,18 +168,20 @@
   top: 12%;
   right: 5%;
   pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .searchInnerBtn {
   width: 15px;
   height: 15px;
 }
 .selectedBreedText {
-  width: 180px;
-  height: 34px;
   display: flex;
+  text-align: center;
   align-items: center;
   justify-content: center;
-  padding: 5px 42px;
+  padding: 5px 15px;
   background: #ffffff;
   border-radius: 10px;
   font-family: 'Jost';

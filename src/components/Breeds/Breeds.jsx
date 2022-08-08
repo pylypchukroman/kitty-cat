@@ -14,13 +14,14 @@ const Breeds = () => {
   const [selectedBreed, setSelectedBreed] = useState('');
   const [selectedBreedList, setSelectedBreedList] = useState([]);
   const curlocation = location.pathname.replace('/', '');
-
+  console.log(breeds);
   const changeLimit = newLimit => {
     setLimit(newLimit);
   };
   const changeBreed = newBreed => {
     setSelectedBreed(newBreed);
   };
+
   const handleSubmit = event => {
     event.preventDefault();
     if (selectedBreed === '') {
@@ -36,7 +37,6 @@ const Breeds = () => {
     getBreeds(limit).then(({ data }) => setBreeds(data));
   }, [limit]);
 
-  console.log(breeds);
   return (
     <>
       <div className={style.navBar}>
@@ -74,7 +74,7 @@ const Breeds = () => {
           {selectedBreedList.length < 1
             ? breeds.map(breed => (
                 <li key={breed.id} className={style.item}>
-                  <b className={style.selectedBreedText}>{breed.id}</b>
+                  <b className={style.selectedBreedText}>{breed.name}</b>
                   <Link
                     className={style.list}
                     to={{
