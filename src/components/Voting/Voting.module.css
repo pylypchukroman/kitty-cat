@@ -87,3 +87,13 @@
   width: 30px;
   height: 30px;
 }
+.loaderWrapper {
+  width: 100%;
+  height: 360px;
+  margin-top: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

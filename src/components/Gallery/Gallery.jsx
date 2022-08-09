@@ -5,20 +5,7 @@ import sprite from '../../icons/sprite.svg';
 import { useEffect, useState } from 'react';
 import { getGallery } from 'utils/CatAPI';
 import { getAllBreeds } from 'utils/CatAPI';
-import { Audio } from 'react-loader-spinner';
-// import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-
-{
-  /* <Audio
-  height="100"
-  width="100"
-  color="red"
-  ariaLabel="audio-loading"
-  wrapperStyle={{}}
-  wrapperClass="wrapper-class"
-  visible={true}
-/>; */
-}
+import { Rings } from 'react-loader-spinner';
 
 const Gallery = () => {
   let location = useLocation();
@@ -30,8 +17,6 @@ const Gallery = () => {
   const [gallery, setGallery] = useState([]);
   const [breedsList, setBreedsList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
-  console.log(isLoading);
 
   const changeLimit = newLimit => {
     setLimit(newLimit);
@@ -168,7 +153,7 @@ const Gallery = () => {
           </ul>
         ) : (
           <div className={style.loaderWrapper}>
-            <Audio
+            <Rings
               height="100"
               width="100"
               color="#ff868e"

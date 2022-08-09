@@ -54,6 +54,8 @@
   grid-auto-rows: 140px;
   grid-template-columns: repeat(3, 1fr);
   margin-top: 20px;
+  position: relative;
+  min-height: 600px;
 }
 .item {
   border-radius: 20px;
@@ -170,4 +172,14 @@
   left: 50%;
   transform: translateX(-50%);
   display: none;
+}
+.loaderWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
 }

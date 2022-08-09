@@ -1,6 +1,7 @@
 import styles from './App.module.css';
 import { lazy, Suspense } from 'react';
 import { Redirect, Route, Switch } from 'react-router';
+import { Rings } from 'react-loader-spinner';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const VotingPage = lazy(() => import('../pages/VotingPage/VotingPage'));
@@ -18,7 +19,19 @@ const BreedDetailsPage = lazy(() =>
 export const App = () => {
   return (
     <div className={styles.container}>
-      <Suspense fallback={<h1>LOADING...</h1>}>
+      <Suspense
+        fallback={
+          <div className={styles.loaderWrapper}>
+            <Rings
+              height="200"
+              width="200"
+              color="#ff868e"
+              ariaLabel="loading"
+              visible={true}
+            />
+          </div>
+        }
+      >
         <Switch>
           <Route exact path="/">
             <HomePage />

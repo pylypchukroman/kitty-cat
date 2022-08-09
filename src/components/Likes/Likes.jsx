@@ -4,16 +4,20 @@ import { useLocation } from 'react-router';
 import HistoryBar from 'components/HistoryBar/HistoryBar';
 import { getAllReactions } from 'utils/CatAPI';
 import ReactionNav from 'components/ReactionNav/ReactionNav';
+import { Rings } from 'react-loader-spinner';
 
 const Likes = () => {
   let location = useLocation();
   const [breeds, setBreeds] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const curlocation = location.pathname.replace('/', '');
 
   useEffect(() => {
-    getAllReactions().then(({ data }) =>
-      setBreeds(data.filter(cat => cat.value === 1))
-    );
+    setIsLoading(false);
+    getAllReactions().then(({ data }) => {
+      setBreeds(data.filter(cat => cat.value === 1));
+      setIsLoading(true);
+    });
   }, []);
   console.log(breeds);
 
@@ -25,20 +29,32 @@ const Likes = () => {
           <ReactionNav />
         </div>
         <ul className={style.breedsGallery}>
-          {breeds.map(breed => (
-            <li key={breed.id} className={style.item}>
-              <div className={style.imgWrapper}>
-                <img
-                  className={style.BreedsGalleryImg}
-                  src={breed.image.url}
-                  alt={breed.name}
-                  width="200"
-                  height="200"
-                />
-              </div>
-              <b className={style.selectedBreedText}>You like it</b>
-            </li>
-          ))}
+          {isLoading ? (
+            breeds.map(breed => (
+              <li key={breed.id} className={style.item}>
+                <div className={style.imgWrapper}>
+                  <img
+                    className={style.BreedsGalleryImg}
+                    src={breed.image.url}
+                    alt={breed.name}
+                    width="200"
+                    height="200"
+                  />
+                </div>
+                <b className={style.selectedBreedText}>You like it</b>
+              </li>
+            ))
+          ) : (
+            <div className={style.loaderWrapper}>
+              <Rings
+                height="100"
+                width="100"
+                color="#ff868e"
+                ariaLabel="loading"
+                visible={true}
+              />
+            </div>
+          )}
         </ul>
       </div>
     </>

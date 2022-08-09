@@ -8,15 +8,22 @@ import { favouriteImage } from '../../utils/CatAPI';
 import { useEffect, useState } from 'react';
 import HistoryBar from 'components/HistoryBar/HistoryBar';
 import { useLocation } from 'react-router';
+import { Rings } from 'react-loader-spinner';
 
 const Voting = () => {
   let location = useLocation();
   const [cat, setCat] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
   const imageId = cat.id;
   const userId = 'Cat Lover';
 
+  console.log(isLoading);
   useEffect(() => {
-    getRandomCat().then(({ data }) => setCat(data[0]));
+    setIsLoading(false);
+    getRandomCat().then(({ data }) => {
+      setCat(data[0]);
+      setIsLoading(true);
+    });
   }, []);
 
   function onfavouritesBtnClick() {
@@ -44,9 +51,27 @@ const Voting = () => {
           <HistoryBar currentLocation={curlocation} />
           <ReactionNav />
         </div>
-        <div className={style.imageWrapper}>
-          <img className={style.randomCat} src={cat.url} alt="" />
-        </div>
+        {isLoading ? (
+          <div className={style.imageWrapper}>
+            <img
+              loading="lazy"
+              className={style.randomCat}
+              src={cat.url}
+              alt=""
+            />
+          </div>
+        ) : (
+          <div className={style.loaderWrapper}>
+            <Rings
+              height="100"
+              width="100"
+              color="#ff868e"
+              ariaLabel="loading"
+              visible={true}
+            />
+          </div>
+        )}
+
         <div className={style.votingPanel}>
           <button
             className={style.likeBtn}

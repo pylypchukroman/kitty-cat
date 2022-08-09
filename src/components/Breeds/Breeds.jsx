@@ -6,6 +6,7 @@ import { useLocation } from 'react-router';
 import HistoryBar from 'components/HistoryBar/HistoryBar';
 import { getSelectedBreed } from 'utils/CatAPI';
 import { Link } from 'react-router-dom';
+import { Rings } from 'react-loader-spinner';
 
 const Breeds = () => {
   let location = useLocation();
@@ -14,7 +15,9 @@ const Breeds = () => {
   const [selectedBreed, setSelectedBreed] = useState('');
   const [selectedBreedList, setSelectedBreedList] = useState([]);
   const curlocation = location.pathname.replace('/', '');
-  console.log(breeds);
+  const [isLoading, setIsLoading] = useState(false);
+
+  console.log(isLoading);
   const changeLimit = newLimit => {
     setLimit(newLimit);
   };
@@ -28,13 +31,19 @@ const Breeds = () => {
       alert('empty');
       return;
     }
-    getSelectedBreed(selectedBreed, limit).then(({ data }) =>
-      setSelectedBreedList(data)
-    );
+    setIsLoading(false);
+    getSelectedBreed(selectedBreed, limit).then(({ data }) => {
+      setSelectedBreedList(data);
+      setIsLoading(true);
+    });
   };
 
   useEffect(() => {
-    getBreeds(limit).then(({ data }) => setBreeds(data));
+    setIsLoading(false);
+    getBreeds(limit).then(({ data }) => {
+      setBreeds(data);
+      setIsLoading(true);
+    });
   }, [limit]);
 
   return (
@@ -71,8 +80,9 @@ const Breeds = () => {
           </div>
         </div>
         <ul className={style.breedsGallery}>
-          {selectedBreedList.length < 1
-            ? breeds.map(breed => (
+          {isLoading ? (
+            selectedBreedList.length < 1 ? (
+              breeds.map(breed => (
                 <li key={breed.id} className={style.item}>
                   <b className={style.selectedBreedText}>{breed.name}</b>
                   <Link
@@ -84,6 +94,7 @@ const Breeds = () => {
                   >
                     <div className={style.imgWrapper}>
                       <img
+                        loading="lazy"
                         className={style.BreedsGalleryImg}
                         src={breed.image.url}
                         alt={breed.name}
@@ -94,20 +105,34 @@ const Breeds = () => {
                   </Link>
                 </li>
               ))
-            : selectedBreedList.map(selectedOneBreed => (
+            ) : (
+              selectedBreedList.map(selectedOneBreed => (
                 <li key={selectedOneBreed.id} className={style.item}>
                   <b className={style.selectedBreedText}>
                     {selectedOneBreed.breeds[0].id}
                   </b>
                   <div className={style.imgWrapper}>
                     <img
+                      loading="lazy"
                       className={style.BreedsGalleryImg}
                       src={selectedOneBreed.url}
                       alt={selectedOneBreed.breeds[0].id}
                     />
                   </div>
                 </li>
-              ))}
+              ))
+            )
+          ) : (
+            <div className={style.loaderWrapper}>
+              <Rings
+                height="100"
+                width="100"
+                color="#ff868e"
+                ariaLabel="loading"
+                visible={true}
+              />
+            </div>
+          )}
         </ul>
       </div>
     </>

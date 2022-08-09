@@ -14,3 +14,9 @@
     min-width: 1440px;
   }
 }
+.loaderWrapper {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+}
