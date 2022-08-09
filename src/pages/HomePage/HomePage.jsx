@@ -1,4 +1,6 @@
+//Styles
 import styles from './HomePage.module.css';
+//Components
 import Navigation from 'components/Navigation/Navigation';
 import Home from 'components/Home/Home';
 

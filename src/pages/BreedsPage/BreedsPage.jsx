@@ -1,4 +1,6 @@
+//Styles
 import styles from './BreedsPage.module.css';
+//Components
 import Navigation from 'components/Navigation/Navigation';
 import Breeds from 'components/Breeds/Breeds';
 

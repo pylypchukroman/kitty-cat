@@ -1,17 +1,25 @@
-import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router';
-import HistoryBar from 'components/HistoryBar/HistoryBar';
-import { getAllReactions } from 'utils/CatAPI';
+//Styles
 import style from './Dislikes.module.css';
+//Components
+import HistoryBar from 'components/HistoryBar/HistoryBar';
 import ReactionNav from 'components/ReactionNav/ReactionNav';
+//API
+import { getAllReactions } from 'utils/CatAPI';
+//Hooks
+import { useLocation } from 'react-router';
+import { useEffect, useState } from 'react';
+//Loader
 import { Rings } from 'react-loader-spinner';
 
 const Dislikes = () => {
+  //Hooks
   let location = useLocation();
   const [breeds, setBreeds] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  //Variables
   const curlocation = location.pathname.replace('/', '');
 
+  //Dislikes load logic
   useEffect(() => {
     setIsLoading(false);
     getAllReactions().then(({ data }) => {

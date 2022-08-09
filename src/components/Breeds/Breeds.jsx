@@ -1,30 +1,39 @@
+//Styles
 import style from './Breeds.module.css';
-import sprite from '../../icons/sprite.svg';
+//Components
+import HistoryBar from 'components/HistoryBar/HistoryBar';
+import { Link } from 'react-router-dom';
+//API
 import { getBreeds } from 'utils/CatAPI';
+import { getSelectedBreed } from 'utils/CatAPI';
+//Hooks
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
-import HistoryBar from 'components/HistoryBar/HistoryBar';
-import { getSelectedBreed } from 'utils/CatAPI';
-import { Link } from 'react-router-dom';
+//Images
+import sprite from '../../icons/sprite.svg';
+//Loader
 import { Rings } from 'react-loader-spinner';
 
 const Breeds = () => {
+  //Hooks
   let location = useLocation();
   const [breeds, setBreeds] = useState([]);
   const [limit, setLimit] = useState('20');
   const [selectedBreed, setSelectedBreed] = useState('');
   const [selectedBreedList, setSelectedBreedList] = useState([]);
-  const curlocation = location.pathname.replace('/', '');
   const [isLoading, setIsLoading] = useState(false);
+  //Variables
+  const curlocation = location.pathname.replace('/', '');
 
-  console.log(isLoading);
+  //Limit select logic
   const changeLimit = newLimit => {
     setLimit(newLimit);
   };
+  //Breeds select logic
   const changeBreed = newBreed => {
     setSelectedBreed(newBreed);
   };
-
+  //Form submit logic
   const handleSubmit = event => {
     event.preventDefault();
     if (selectedBreed === '') {
@@ -37,7 +46,7 @@ const Breeds = () => {
       setIsLoading(true);
     });
   };
-
+  //Breeds list load logic
   useEffect(() => {
     setIsLoading(false);
     getBreeds(limit).then(({ data }) => {

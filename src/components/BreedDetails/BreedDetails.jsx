@@ -1,8 +1,13 @@
+//Styles
+import style from './BreedDetails.module.css';
+//Components
 import HistoryBar from 'components/HistoryBar/HistoryBar';
+//API
+import { getBreedDetails } from 'utils/CatAPI';
+//Hooks
 import { useEffect, useState } from 'react';
 import { useLocation, useParams } from 'react-router';
-import { getBreedDetails } from 'utils/CatAPI';
-import style from './BreedDetails.module.css';
+//Loader
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -10,14 +15,16 @@ import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper';
 
 const Breed = () => {
+  //Hooks
   const { breedId } = useParams();
   let location = useLocation();
   const [breedDetails, setBreedDetails] = useState([]);
-
+  //Variables
   const curlocation = location.pathname.replace('/', '');
   const breedInfo = breedDetails.length < 1 ? [] : breedDetails[0].breeds[0];
   const weight = breedInfo.length < 1 ? [] : breedInfo.weight.metric;
 
+  //Breed list load logic
   useEffect(() => {
     getBreedDetails(breedId).then(({ data }) => setBreedDetails(data));
   }, [breedId]);

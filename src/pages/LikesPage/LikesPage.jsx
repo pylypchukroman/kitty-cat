@@ -1,6 +1,8 @@
+//Styles
+import styles from './LikesPage.module.css';
+//Components
 import Likes from 'components/Likes/Likes';
 import Navigation from 'components/Navigation/Navigation';
-import styles from './LikesPage.module.css';
 
 const LikesPage = () => {
   return (

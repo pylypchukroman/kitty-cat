@@ -1,17 +1,25 @@
+//Styles
 import style from './Favourites.module.css';
+//Components
+import ReactionNav from 'components/ReactionNav/ReactionNav';
+import HistoryBar from 'components/HistoryBar/HistoryBar';
+//API
+import { getFavourite } from 'utils/CatAPI';
+//Hooks
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
-import HistoryBar from 'components/HistoryBar/HistoryBar';
-import { getFavourite } from 'utils/CatAPI';
-import ReactionNav from 'components/ReactionNav/ReactionNav';
+//Loader
 import { Rings } from 'react-loader-spinner';
 
 const Favourites = () => {
+  //Hooks
   let location = useLocation();
   const [breeds, setBreeds] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  //Variables
   const curlocation = location.pathname.replace('/', '');
 
+  //Favourites images load logic
   useEffect(() => {
     setIsLoading(false);
     getFavourite().then(({ data }) => {

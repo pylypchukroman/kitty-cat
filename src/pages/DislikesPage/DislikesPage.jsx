@@ -1,6 +1,8 @@
+//Styles
+import styles from './DislikesPage.module.css';
+//Components
 import Dislikes from 'components/Dislikes/Dislikes';
 import Navigation from 'components/Navigation/Navigation';
-import styles from './DislikesPage.module.css';
 
 const DislikePage = () => {
   return (

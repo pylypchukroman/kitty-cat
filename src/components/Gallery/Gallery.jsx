@@ -1,15 +1,21 @@
+//Styles
 import style from './Gallery.module.css';
-import { useLocation } from 'react-router';
+//Components
 import HistoryBar from 'components/HistoryBar/HistoryBar';
-import sprite from '../../icons/sprite.svg';
-import { useEffect, useState } from 'react';
+//API
 import { getGallery } from 'utils/CatAPI';
 import { getAllBreeds } from 'utils/CatAPI';
+//Hooks
+import { useLocation } from 'react-router';
+import { useEffect, useState } from 'react';
+//Images
+import sprite from '../../icons/sprite.svg';
+//Loader
 import { Rings } from 'react-loader-spinner';
 
 const Gallery = () => {
+  //Hooks
   let location = useLocation();
-  const curlocation = location.pathname.replace('/', '');
   const [order, setOrder] = useState('random');
   const [type, setType] = useState('all');
   const [limit, setLimit] = useState('20');
@@ -17,19 +23,25 @@ const Gallery = () => {
   const [gallery, setGallery] = useState([]);
   const [breedsList, setBreedsList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
+  //Variables
+  const curlocation = location.pathname.replace('/', '');
+  //Limit select logic
   const changeLimit = newLimit => {
     setLimit(newLimit);
   };
+  //Type select logic
   const changeType = newType => {
     setType(newType);
   };
+  //Order select logic
   const changeOrder = newOrder => {
     setOrder(newOrder);
   };
+  //Breeds select logic
   const changeBreed = newBreed => {
     setBreed(newBreed);
   };
+  //reload page button logic
   const reloadPage = () => {
     setIsLoading(false);
     getGallery(type, order, limit, breed).then(({ data }) => {
@@ -37,6 +49,7 @@ const Gallery = () => {
       setIsLoading(true);
     });
   };
+  //Main gallery load logic
   useEffect(() => {
     setIsLoading(false);
     getAllBreeds().then(({ data }) => setBreedsList(data.map(breed => breed)));

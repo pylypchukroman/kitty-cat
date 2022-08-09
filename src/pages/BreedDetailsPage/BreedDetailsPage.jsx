@@ -1,6 +1,8 @@
+//Styles
+import styles from './BreedDetailsPage.module.css';
+//Components
 import Breed from 'components/BreedDetails/BreedDetails';
 import Navigation from 'components/Navigation/Navigation';
-import styles from './BreedDetailsPage.module.css';
 
 const BreedDetailsPage = () => {
   return (

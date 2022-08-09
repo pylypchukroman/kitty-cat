@@ -1,4 +1,6 @@
+//Styles
 import styles from './VotingPage.module.css';
+//Components
 import Navigation from 'components/Navigation/Navigation';
 import Voting from 'components/Voting/Voting';
 

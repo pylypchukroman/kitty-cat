@@ -1,6 +1,8 @@
+//Styles
+import styles from './FavouritesPage.module.css';
+//Components
 import Favourites from 'components/Favourites/Favourites';
 import Navigation from 'components/Navigation/Navigation';
-import styles from './FavouritesPage.module.css';
 
 const FavouritesPage = () => {
   return (
