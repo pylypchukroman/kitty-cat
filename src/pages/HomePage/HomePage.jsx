@@ -11,6 +11,7 @@ const HomePage = () => {
         </div>
       </div>
       <div className={styles.rightSide}>
+        <div className={styles.bcgColor}></div>
         <Home />
       </div>
     </div>
