@@ -1,4 +1,6 @@
+//Styles
 import style from './SearchForm.module.css';
+//Images
 import sprite from '../../icons/sprite.svg';
 
 const SearchForm = () => {

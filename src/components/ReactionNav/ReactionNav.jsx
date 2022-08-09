@@ -1,10 +1,13 @@
+//Styles
 import styles from './ReactionNav.module.css';
+//Images
 import sprite from '../../icons/sprite.svg';
+//Components
 import { NavLink } from 'react-router-dom';
 
 const ReactionNav = () => {
   return (
-    <div className={styles.wrapper}>
+    <nav className={styles.wrapper}>
       <NavLink
         to="/likes"
         className={styles.linkLikes}
@@ -32,7 +35,7 @@ const ReactionNav = () => {
           <use href={sprite + '#icon-dislike'}></use>
         </svg>
       </NavLink>
-    </div>
+    </nav>
   );
 };
 

@@ -1,17 +1,25 @@
+//Styles
 import style from './Likes.module.css';
+//Components
+import ReactionNav from 'components/ReactionNav/ReactionNav';
+import HistoryBar from 'components/HistoryBar/HistoryBar';
+//API
+import { getAllReactions } from 'utils/CatAPI';
+//Hooks
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
-import HistoryBar from 'components/HistoryBar/HistoryBar';
-import { getAllReactions } from 'utils/CatAPI';
-import ReactionNav from 'components/ReactionNav/ReactionNav';
+//Loader
 import { Rings } from 'react-loader-spinner';
 
 const Likes = () => {
+  //Hooks
   let location = useLocation();
   const [breeds, setBreeds] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  //Variables
   const curlocation = location.pathname.replace('/', '');
 
+  //Get likes list logic
   useEffect(() => {
     setIsLoading(false);
     getAllReactions().then(({ data }) => {
@@ -19,7 +27,6 @@ const Likes = () => {
       setIsLoading(true);
     });
   }, []);
-  console.log(breeds);
 
   return (
     <>

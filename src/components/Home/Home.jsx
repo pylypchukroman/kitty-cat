@@ -1,4 +1,6 @@
+//Styles
 import styles from './Home.module.css';
+//Images
 import mainBcgImg from '../../images/main-bcf-img-min.png';
 
 const Home = () => {

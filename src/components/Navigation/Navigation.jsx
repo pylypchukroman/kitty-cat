@@ -1,6 +1,8 @@
-import { NavLink } from 'react-router-dom';
+//Styles
 import styles from './Navigation.module.css';
-// import logoImg from '../../images/logo-min.png';
+//Components
+import { NavLink } from 'react-router-dom';
+//Images
 import votingImg from '../../images/voting-img-min.png';
 import breedsImg from '../../images/breeds-img-min.png';
 import galleryImg from '../../images/galerry-img-min.png';
@@ -9,7 +11,7 @@ import catImg from '../../images/NicePng_monster-hunter-world-png_4416314.png';
 const Navigation = () => {
   return (
     <nav className={styles.nav}>
-      <NavLink exact to="/">
+      <NavLink exact to="/" className={styles.logoLink}>
         <img
           className={styles.logo}
           src={catImg}

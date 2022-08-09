@@ -1,23 +1,32 @@
+//Styles
 import style from './Voting.module.css';
-import spriteWhite from '../../icons/sprit-white.svg';
+//Components
+import HistoryBar from 'components/HistoryBar/HistoryBar';
 import ReactionNav from '../ReactionNav/ReactionNav';
+//API
 import { getRandomCat } from '../../utils/CatAPI';
 import { voteUp } from '../../utils/CatAPI';
 import { voteDown } from '../../utils/CatAPI';
 import { favouriteImage } from '../../utils/CatAPI';
-import { useEffect, useState } from 'react';
-import HistoryBar from 'components/HistoryBar/HistoryBar';
+//Hooks
 import { useLocation } from 'react-router';
+import { useEffect, useState } from 'react';
+//Images
+import spriteWhite from '../../icons/sprit-white.svg';
+//Loader
 import { Rings } from 'react-loader-spinner';
 
 const Voting = () => {
+  //Hooks
   let location = useLocation();
   const [cat, setCat] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  //Variables
   const imageId = cat.id;
   const userId = 'Cat Lover';
+  const curlocation = location.pathname.replace('/', '');
 
-  console.log(isLoading);
+  //Image load logic
   useEffect(() => {
     setIsLoading(false);
     getRandomCat().then(({ data }) => {
@@ -26,23 +35,38 @@ const Voting = () => {
     });
   }, []);
 
+  //Favourites button logic
   function onfavouritesBtnClick() {
+    setIsLoading(false);
     console.log('click Fav');
-    favouriteImage(imageId, userId).then(({ data }) => console.log(data));
-    getRandomCat().then(({ data }) => setCat(data[0]));
-  }
-  function onLikeBtnClick() {
-    console.log('click Like');
-    voteUp(imageId, userId).then(({ data }) => console.log(data));
-    getRandomCat().then(({ data }) => setCat(data[0]));
-  }
-  function onDislikeBtnClick() {
-    console.log('click Dis');
-    voteDown(imageId, userId).then(({ data }) => console.log(data));
-    getRandomCat().then(({ data }) => setCat(data[0]));
+    favouriteImage(imageId, userId).then(({ data }) => data);
+    getRandomCat().then(({ data }) => {
+      setCat(data[0]);
+      setIsLoading(true);
+    });
   }
 
-  const curlocation = location.pathname.replace('/', '');
+  //Likes button logic
+  function onLikeBtnClick() {
+    setIsLoading(false);
+    console.log('click Like');
+    voteUp(imageId, userId).then(({ data }) => data);
+    getRandomCat().then(({ data }) => {
+      setCat(data[0]);
+      setIsLoading(true);
+    });
+  }
+
+  //Dislikes button logic
+  function onDislikeBtnClick() {
+    setIsLoading(false);
+    console.log('click Dis');
+    voteDown(imageId, userId).then(({ data }) => data);
+    getRandomCat().then(({ data }) => {
+      setCat(data[0]);
+      setIsLoading(true);
+    });
+  }
 
   return (
     <>

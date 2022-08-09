@@ -1,9 +1,14 @@
+//Styles
 import styles from './HistoryBar.module.css';
-import sprite from '../../icons/sprite.svg';
+//Hooks
 import { useHistory } from 'react-router-dom';
+//Images
+import sprite from '../../icons/sprite.svg';
 
 const HistoryBar = ({ currentLocation }) => {
+  //Hooks
   const history = useHistory();
+  //Variables
   const location = currentLocation.split('/')[0];
   return (
     <div className={styles.historyBarWrapper}>
