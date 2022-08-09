@@ -1,3 +1,4 @@
+/* section styles */
 .navBar {
   display: flex;
   background: #ffffff;
@@ -8,39 +9,18 @@
 }
 .navWrapper {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
 
-.returnBtnWrapper {
-  width: 40px;
-  height: 40px;
-  border: none;
-  background: #fbe0dc;
-  border-radius: 10px;
-  margin-right: 10px;
-}
-.returnBtnImg {
-  width: 20px;
-  height: 20px;
-}
-.wrapper {
-  width: 610px;
+/* Buttons section styles */
+.buttonsWrapper {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  justify-content: center;
 }
-.navBarText {
-  padding: 5px 30px;
-  background: #ff868e;
-  border-radius: 10px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.5;
-  text-align: center;
-  letter-spacing: 2px;
-  color: #ffffff;
-  height: 40px;
-}
+
+/* Upload button styles */
 .upoadBtn {
   width: 143px;
   height: 40px;
@@ -74,11 +54,8 @@
   color: #ff868e;
   margin-left: 10px;
 }
-.buttonsWrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
+/* Reload page button styles */
 .reloadBtnIcon {
   width: 16px;
   height: 16px;
@@ -103,6 +80,8 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-left: 10px;
 }
+
+/* Selects section styles */
 .selectWrapper {
   margin-top: 10px;
   background: #f8f8f7;
@@ -110,10 +89,15 @@
   padding: 10px 20px;
   padding-bottom: 20px;
 }
-.navWrapper {
+.orderAndType {
   display: flex;
-  flex-direction: row;
+  margin-bottom: 10px;
 }
+.breedAndLimit {
+  display: flex;
+}
+
+/* Labels styles */
 .label {
   display: flex;
   flex-direction: column;
@@ -124,6 +108,7 @@
   color: #8c8c8c;
 }
 
+/* Select styles */
 .Select {
   width: 290px;
   height: 40px;
@@ -134,13 +119,8 @@
   padding: 5px 10px;
   outline: none;
 }
-.orderAndType {
-  display: flex;
-  margin-bottom: 10px;
-}
-.breedAndLimit {
-  display: flex;
-}
+
+/* Main list styles */
 .gallery {
   gap: 20px;
   counter-reset: li;
@@ -149,6 +129,8 @@
   grid-template-columns: repeat(3, 1fr);
   margin-top: 20px;
 }
+
+/* Item styles */
 .item:nth-child(1) {
   grid-column: auto/span 1;
   grid-row: auto/span 2;
@@ -189,6 +171,8 @@
 .item:hover {
   transform: scale(1.07);
 }
+
+/* Item image styles */
 .galleryImg {
   display: block;
   height: 100%;
@@ -196,11 +180,8 @@
   object-position: right;
   width: 100%;
 }
-.emptyGalleryMsg {
-  width: 100%;
-  border: 1px solid red;
-  width: 30px;
-}
+
+/* Loader styles */
 .loaderWrapper {
   display: flex;
   justify-content: center;

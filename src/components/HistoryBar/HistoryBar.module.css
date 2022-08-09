@@ -1,6 +1,9 @@
+/* sectins styles */
 .historyBarWrapper {
   display: flex;
 }
+
+/* Return button styles */
 .returnBtnWrapper {
   width: 40px;
   height: 40px;
@@ -24,6 +27,8 @@
   fill: #ff868e;
   transition: fill 0.5s;
 }
+
+/* Location text styles */
 .navBarText {
   height: 40px;
   padding: 5px 30px;
@@ -39,21 +44,4 @@
   text-align: center;
   letter-spacing: 2px;
   color: #ffffff;
-}
-.navBarTextSecond {
-  height: 40px;
-  padding: 5px 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #ff868e;
-  border-radius: 10px;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.5;
-  text-align: center;
-  letter-spacing: 2px;
-  color: #ffffff;
-  margin-left: 10px;
 }

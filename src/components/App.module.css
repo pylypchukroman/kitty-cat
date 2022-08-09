@@ -1,9 +1,10 @@
+/* main container styles */
 .container {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
   padding: 30px 30px;
-  /* position: relative; */
+
   @media screen and (min-width: 480px) {
     width: 480px;
   }
@@ -14,6 +15,8 @@
     min-width: 1440px;
   }
 }
+
+/* loader styles */
 .loaderWrapper {
   position: absolute;
   top: 100%;

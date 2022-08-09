@@ -1,16 +1,21 @@
+/* section styles */
 .hero {
   display: flex;
 }
+
+/* Left side of the screen section styles */
 .leftSide {
   height: 100vh;
   width: 50%;
   padding-top: 37px;
   padding-left: 63px;
 }
+.wrapper {
+  position: fixed;
+}
+
+/* Right side of the screen section styles */
 .rightSide {
   height: 100vh;
   width: 50%;
-}
-.wrapper {
-  position: fixed;
 }

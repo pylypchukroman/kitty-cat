@@ -1,7 +1,9 @@
+/* Sections styles */
 .wrapper {
   display: flex;
 }
 
+/* Likes link styles */
 .linkLikes {
   width: 50px;
   height: 50px;
@@ -29,12 +31,15 @@
   height: 30px;
   fill: #97eab9;
 }
+/* Likes activlink styles */
 .activLike {
   background-color: #97eab9;
 }
 .activLike > .reactionIconLikes {
   fill: #fff;
 }
+
+/* Favourites link styles */
 .linkFavourites {
   width: 50px;
   height: 50px;
@@ -62,12 +67,16 @@
   height: 30px;
   fill: #ff868e;
 }
+
+/* Likes activlink styles */
 .activFavourites {
   background-color: #ff868e;
 }
 .activFavourites > .reactionIconFafourites {
   fill: #fff;
 }
+
+/* Dislike link styles */
 .linkDislike {
   width: 50px;
   height: 50px;
@@ -94,6 +103,8 @@
   height: 30px;
   fill: #ffd280;
 }
+
+/* Dislike activlink styles */
 .activDislikes {
   background-color: #ffd280;
 }

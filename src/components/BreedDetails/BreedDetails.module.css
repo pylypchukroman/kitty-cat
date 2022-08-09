@@ -1,3 +1,4 @@
+/* Section styles */
 .navBar {
   display: flex;
   justify-content: space-between;
@@ -12,6 +13,8 @@
   border-radius: 10px;
   width: 100%;
 }
+
+/* Image styles */
 .imageWrapper {
   height: 360px;
   margin-top: 20px;
@@ -28,6 +31,8 @@
   overflow: hidden;
   height: 400px;
 }
+
+/* Information section */
 .breedInfornation {
   margin-top: 50px;
   border: 2px solid #fbe0dc;
@@ -35,19 +40,11 @@
   height: 250px;
   position: relative;
 }
+
+/* Info list styles */
 .list {
   display: flex;
   justify-content: space-around;
-}
-.infoItem {
-  width: 40%;
-}
-.name {
-  font-family: 'Jost';
-  font-weight: 500;
-  font-size: 36px;
-  line-height: 52px;
-  color: #1d1d1d;
 }
 .titleWrapper {
   min-width: 200px;
@@ -62,9 +59,24 @@
   display: inline-block;
   position: absolute;
   left: 5%;
-  /* transform: translateX(-55%); */
   top: -13%;
 }
+
+/* Item styles */
+.infoItem {
+  width: 40%;
+}
+
+/* Name styles */
+.name {
+  font-family: 'Jost';
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 52px;
+  color: #1d1d1d;
+}
+
+/* Descriptions styles */
 .description {
   margin: 0 auto;
   padding: 10px 20px;
@@ -78,23 +90,24 @@
   overflow: scroll;
   height: 90px;
 }
+
+/* Titles styles */
 .title {
   font-family: 'Jost';
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
   line-height: 23px;
-
   color: #1d1d1d;
-
   margin-bottom: 10px;
 }
+
+/* Title spans styles */
 .infoDescription {
   font-family: 'Jost';
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 23px;
-
   color: #8c8c8c;
 }

@@ -1,15 +1,9 @@
-/* .rightSideVoting {
-  height: 100vh;
-  width: 100%;
-  border-radius: 20px;
-} */
+/* Sections styles */
 .voting {
   display: flex;
 }
-.searchForm {
-  display: flex;
-  margin-bottom: 30px;
-}
+
+/* Search inpute styles */
 .searchInpute {
   width: 470px;
   height: 60px;
