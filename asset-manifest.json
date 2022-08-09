@@ -1,9 +1,9 @@
 {
   "files": {
-    "main.css": "/react-homework-template/static/css/main.616588c3.css",
-    "main.js": "/react-homework-template/static/js/main.3107ef9a.js",
-    "static/css/353.72028859.chunk.css": "/react-homework-template/static/css/353.72028859.chunk.css",
-    "static/js/353.b132fb88.chunk.js": "/react-homework-template/static/js/353.b132fb88.chunk.js",
+    "main.css": "/react-homework-template/static/css/main.1137d9ab.css",
+    "main.js": "/react-homework-template/static/js/main.735a0005.js",
+    "static/css/353.debcb65d.chunk.css": "/react-homework-template/static/css/353.debcb65d.chunk.css",
+    "static/js/353.b7c9fc8e.chunk.js": "/react-homework-template/static/js/353.b7c9fc8e.chunk.js",
     "static/css/863.83a4b58e.chunk.css": "/react-homework-template/static/css/863.83a4b58e.chunk.css",
     "static/js/863.9dc19e8a.chunk.js": "/react-homework-template/static/js/863.9dc19e8a.chunk.js",
     "static/css/775.1a2c61f7.chunk.css": "/react-homework-template/static/css/775.1a2c61f7.chunk.css",
@@ -28,10 +28,10 @@
     "static/media/sprite.svg": "/react-homework-template/static/media/sprite.ff4bf647b0e26ca0c888424bf2c98e3a.svg",
     "static/media/sprit-white.svg": "/react-homework-template/static/media/sprit-white.a61db77496684275fd9885fc719df412.svg",
     "index.html": "/react-homework-template/index.html",
-    "main.616588c3.css.map": "/react-homework-template/static/css/main.616588c3.css.map",
-    "main.3107ef9a.js.map": "/react-homework-template/static/js/main.3107ef9a.js.map",
-    "353.72028859.chunk.css.map": "/react-homework-template/static/css/353.72028859.chunk.css.map",
-    "353.b132fb88.chunk.js.map": "/react-homework-template/static/js/353.b132fb88.chunk.js.map",
+    "main.1137d9ab.css.map": "/react-homework-template/static/css/main.1137d9ab.css.map",
+    "main.735a0005.js.map": "/react-homework-template/static/js/main.735a0005.js.map",
+    "353.debcb65d.chunk.css.map": "/react-homework-template/static/css/353.debcb65d.chunk.css.map",
+    "353.b7c9fc8e.chunk.js.map": "/react-homework-template/static/js/353.b7c9fc8e.chunk.js.map",
     "863.83a4b58e.chunk.css.map": "/react-homework-template/static/css/863.83a4b58e.chunk.css.map",
     "863.9dc19e8a.chunk.js.map": "/react-homework-template/static/js/863.9dc19e8a.chunk.js.map",
     "775.1a2c61f7.chunk.css.map": "/react-homework-template/static/css/775.1a2c61f7.chunk.css.map",
@@ -53,7 +53,7 @@
     "231.84f0d895.chunk.js.map": "/react-homework-template/static/js/231.84f0d895.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.616588c3.css",
-    "static/js/main.3107ef9a.js"
+    "static/css/main.1137d9ab.css",
+    "static/js/main.735a0005.js"
   ]
 }
