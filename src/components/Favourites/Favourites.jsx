@@ -45,21 +45,25 @@ const Favourites = () => {
         </div>
         <ul className={style.breedsGallery}>
           {isLoading ? (
-            breeds.map(breed => (
-              <li key={breed.id} className={style.item}>
-                <div className={style.imgWrapper}>
-                  <img
-                    loading="lazy"
-                    className={style.BreedsGalleryImg}
-                    src={breed.image.url}
-                    alt={breed.name}
-                    width="200"
-                    height="200"
-                  />
-                </div>
-                <b className={style.selectedBreedText}>You love it</b>
-              </li>
-            ))
+            breeds.length < 1 ? (
+              <p className={style.emptyListMsg}>Your list is empty for now</p>
+            ) : (
+              breeds.map(breed => (
+                <li key={breed.id} className={style.item}>
+                  <div className={style.imgWrapper}>
+                    <img
+                      loading="lazy"
+                      className={style.BreedsGalleryImg}
+                      src={breed.image.url}
+                      alt={breed.name}
+                      width="200"
+                      height="200"
+                    />
+                  </div>
+                  <b className={style.selectedBreedText}>You love it</b>
+                </li>
+              ))
+            )
           ) : (
             <div className={style.loaderWrapper}>
               <Rings

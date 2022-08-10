@@ -190,6 +190,11 @@
   display: none;
 }
 
+/* Empty list msg */
+.emptyListMsg {
+  color: var(--second-black-color);
+}
+
 /* Loader styles */
 .loaderWrapper {
   display: flex;
