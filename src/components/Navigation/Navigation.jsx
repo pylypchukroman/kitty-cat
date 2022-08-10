@@ -13,6 +13,7 @@ const Navigation = () => {
     <nav className={styles.nav}>
       <NavLink exact to="/" className={styles.logoLink}>
         <img
+          loading="lazy"
           className={styles.logo}
           src={catImg}
           alt=""
@@ -28,7 +29,12 @@ const Navigation = () => {
           activeClassName={styles.activeLink}
           to="/voting"
         >
-          <img className={styles.votingImg} src={votingImg} alt="" />
+          <img
+            loading="lazy"
+            className={styles.votingImg}
+            src={votingImg}
+            alt="Voting foto"
+          />
           <p className={styles.linkText}>VOTING</p>
         </NavLink>
         <NavLink
@@ -36,7 +42,12 @@ const Navigation = () => {
           activeClassName={styles.activeLink}
           to="/breeds"
         >
-          <img className={styles.votingImg} src={breedsImg} alt="" />
+          <img
+            loading="lazy"
+            className={styles.votingImg}
+            src={breedsImg}
+            alt="Breeds foto"
+          />
           <p className={styles.linkText}>BREEDS</p>
         </NavLink>
         <NavLink
@@ -44,7 +55,12 @@ const Navigation = () => {
           activeClassName={styles.activeLink}
           to="/gallery"
         >
-          <img className={styles.votingImg} src={galleryImg} alt="" />
+          <img
+            loading="lazy"
+            className={styles.votingImg}
+            src={galleryImg}
+            alt="Gallery foto"
+          />
           <p className={styles.linkText}>GALLERY</p>
         </NavLink>
       </div>

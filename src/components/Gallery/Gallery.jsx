@@ -90,6 +90,10 @@ const Gallery = () => {
         console.warn('error', message);
       });
   }, [type, order, limit, breed]);
+  // Upload image logic
+  const uploadImage = () => {
+    alert('Page is coming, pls visit later');
+  };
 
   return (
     <>
@@ -97,7 +101,11 @@ const Gallery = () => {
         <div className={style.navWrapper}>
           <HistoryBar currentLocation={curlocation} />
           <div className={style.buttonsWrapper}>
-            <button type="button" className={style.upoadBtn}>
+            <button
+              type="button"
+              className={style.upoadBtn}
+              onClick={uploadImage}
+            >
               <svg className={style.uploadIcon}>
                 <use href={sprite + '#icon-upload'}></use>
               </svg>

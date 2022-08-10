@@ -68,9 +68,10 @@ const Breed = () => {
                       <SwiperSlide key={breed.id}>
                         <li key={breed.id} className={style.item}>
                           <img
+                            loading="lazy"
                             className={style.randomCat}
                             src={breed.url}
-                            alt=""
+                            alt="Breed details"
                             width="100"
                             height="100"
                           />

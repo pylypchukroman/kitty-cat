@@ -19,11 +19,13 @@
   transition: all 0.5s;
   box-shadow: 0px 4px 4px var(--box-shadow);
 }
-.linkLikes:hover {
+.linkLikes:hover,
+.linkLikes:focus {
   transform: scale(1.07);
   background: var(--secong-bcg-green-color);
 }
-.linkLikes:hover > .reactionIcon {
+.linkLikes:hover > .reactionIcon,
+.linkLikes:focus > .reactionIcon {
   fill: var(--breeds-link-bcg);
 }
 .reactionIconLikes {
@@ -55,11 +57,13 @@
   transition: all 0.5s;
   box-shadow: 0px 4px 4px var(--box-shadow);
 }
-.linkFavourites:hover {
+.linkFavourites:hover,
+.linkFavourites:focus {
   transform: scale(1.07);
   background: var(--secong-bcg-pink-color);
 }
-.linkFavourites:hover > .reactionIcon {
+.linkFavourites:hover > .reactionIcon,
+.linkFavourites:focus > .reactionIcon {
   fill: var(--main-pink-color);
 }
 .reactionIconFafourites {
@@ -91,11 +95,13 @@
   transition: all 0.5s;
   box-shadow: 0px 4px 4px var(--box-shadow);
 }
-.linkDislike:hover {
+.linkDislike:hover,
+.linkDislike:focus {
   transform: scale(1.07);
   background: var(--secong-bcg-yellow-color);
 }
-.linkDislike:hover > .reactionIcon {
+.linkDislike:hover > .reactionIcon,
+.linkDislike:focus > .reactionIcon {
   fill: var(--gallery-link-bcg);
 }
 .reactionIconDislikes {

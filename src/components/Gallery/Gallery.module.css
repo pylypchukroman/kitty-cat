@@ -30,13 +30,16 @@
   box-shadow: 0px 4px 4px var(--box-shadow);
   transition: all 0.5s;
 }
-.upoadBtn:hover {
+.upoadBtn:hover,
+.upoadBtn:focus {
   background-color: var(--main-pink-color);
 }
-.upoadBtn:hover > .uloadBtnText {
+.upoadBtn:hover,
+.upoadBtn:focus > .uloadBtnText {
   color: var(--main-white-color);
 }
-.upoadBtn:hover > .uploadIcon {
+.upoadBtn:hover,
+.upoadBtn:focus > .uploadIcon {
   fill: var(--main-white-color);
   transform: scale(1.1);
 }
@@ -62,13 +65,16 @@
   transition: all 0.5s;
   fill: var(--main-pink-color);
 }
-.reloadBtn:hover > .reloadBtnIcon {
+.reloadBtn:hover > .reloadBtnIcon,
+.reloadBtn:focus > .reloadBtnIcon {
   transform: rotate(360deg);
 }
-.reloadBtn:hover > .reloadBtnIcon {
+.reloadBtn:hover > .reloadBtnIcon,
+.reloadBtn:focus > .reloadBtnIcon {
   fill: var(--main-white-color);
 }
-.reloadBtn:hover {
+.reloadBtn:hover,
+.reloadBtn:focus {
   background-color: var(--main-pink-color);
 }
 .reloadBtn {
@@ -168,7 +174,8 @@
   overflow: hidden;
   transition: all 0.5s;
 }
-.item:hover {
+.item:hover,
+.item:focus {
   transform: scale(1.07);
 }
 

@@ -15,7 +15,8 @@
   cursor: pointer;
   transition: background 0.5;
 }
-.returnBtnWrapper:hover {
+.returnBtnWrapper:hover,
+.returnBtnWrapper:focus {
   background: var(--main-pink-color);
 }
 .returnBtnWrapper:hover > .returnBtnImg {

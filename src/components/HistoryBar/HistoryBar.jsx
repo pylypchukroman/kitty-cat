@@ -4,6 +4,8 @@ import styles from './HistoryBar.module.css';
 import { useHistory } from 'react-router-dom';
 //Images
 import sprite from '../../icons/sprite.svg';
+//Prop types
+import PropTypes from 'prop-types';
 
 const HistoryBar = ({ currentLocation }) => {
   //Hooks
@@ -24,6 +26,10 @@ const HistoryBar = ({ currentLocation }) => {
       <p className={styles.navBarText}>{location}</p>
     </div>
   );
+};
+
+HistoryBar.propTypes = {
+  currentLocation: PropTypes.string.isRequired,
 };
 
 export default HistoryBar;

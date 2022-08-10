@@ -61,10 +61,12 @@
   border: none;
   margin-right: 4px;
 }
-.likeBtn:hover {
+.likeBtn:hover,
+.likeBtn:focus {
   background: var(--secong-bcg-green-color);
 }
-.likeBtn:hover > .votingPanelIconImg {
+.likeBtn:hover > .votingPanelIconImg,
+.likeBtn:focus > .votingPanelIconImg {
   fill: var(--breeds-link-bcg);
 }
 
@@ -75,10 +77,12 @@
   background: var(--gallery-link-bcg);
   border: none;
 }
-.dislikeBtn:hover {
+.dislikeBtn:hover,
+.dislikeBtn:focus {
   background: var(--secong-bcg-yellow-color);
 }
-.dislikeBtn:hover > .votingPanelIconImg {
+.dislikeBtn:hover > .votingPanelIconImg,
+.dislikeBtn:focus > .votingPanelIconImg {
   fill: var(--gallery-link-bcg);
 }
 
@@ -90,10 +94,12 @@
   border: none;
   margin-right: 4px;
 }
-.favouritesBtn:hover {
+.favouritesBtn:hover,
+.favouritesBtn:focus {
   background: var(--secong-bcg-pink-color);
 }
-.favouritesBtn:hover > .votingPanelIconImg {
+.favouritesBtn:hover > .votingPanelIconImg,
+.favouritesBtn:focus > .votingPanelIconImg {
   fill: var(--main-pink-color);
 }
 

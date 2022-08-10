@@ -17,7 +17,8 @@
 .logo {
   transition: all 0.5s;
 }
-.logo:hover {
+.logo:hover,
+.logo:focus {
   transform: scale(1.07);
 }
 
@@ -77,10 +78,12 @@
   margin-right: 18px;
   text-decoration: none;
 }
-.votingBcg:hover {
+.votingBcg:hover,
+.votingBcg:focus {
   border: 4px solid var(--main-white-color);
 }
-.votingBcg:hover > .linkText {
+.votingBcg:hover > .linkText,
+.votingBcg:focus > .linkText {
   background: var(--main-pink-color);
   color: var(--main-white-color);
 }
@@ -95,10 +98,12 @@
   margin-right: 18px;
   text-decoration: none;
 }
-.breedsBcg:hover {
+.breedsBcg:hover,
+.breedsBcg:focus {
   border: 4px solid var(--main-white-color);
 }
-.breedsBcg:hover > .linkText {
+.breedsBcg:hover > .linkText,
+.breedsBcg:focus > .linkText {
   background: var(--main-pink-color);
   color: var(--main-white-color);
 }
@@ -112,10 +117,12 @@
   height: 198px;
   text-decoration: none;
 }
-.galleryBcg:hover {
+.galleryBcg:hover,
+.galleryBcg:focus {
   border: 4px solid var(--main-white-color);
 }
-.galleryBcg:hover > .linkText {
+.galleryBcg:hover > .linkText,
+.galleryBcg:focus > .linkText {
   background: var(--main-pink-color);
   color: var(--main-white-color);
 }

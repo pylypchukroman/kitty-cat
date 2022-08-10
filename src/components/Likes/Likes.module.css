@@ -43,7 +43,8 @@
   transition: all 0.5s;
   position: relative;
 }
-.item:hover {
+.item:hover,
+.item:focus {
   transform: scale(1.07);
 }
 .item:hover > .selectedBreedText {
@@ -146,7 +147,8 @@
   grid-row: auto/span 2;
 }
 
-.item:hover > .imgWrapper::after {
+.item:hover > .imgWrapper::after,
+.item:focus > .imgWrapper::after {
   content: '';
   position: absolute;
   left: 0;

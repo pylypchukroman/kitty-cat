@@ -49,6 +49,7 @@ const Dislikes = () => {
               <li key={breed.id} className={style.item}>
                 <div className={style.imgWrapper}>
                   <img
+                    loading="lazy"
                     className={style.BreedsGalleryImg}
                     src={breed.image.url}
                     alt={breed.name}

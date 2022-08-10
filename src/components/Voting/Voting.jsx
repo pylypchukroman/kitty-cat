@@ -23,6 +23,8 @@ const Voting = () => {
   let location = useLocation();
   const [cat, setCat] = useState({});
   const [isLoading, setIsLoading] = useState(false);
+  const [isImageLoad, setIsImageLoad] = useState(false);
+  console.log(isImageLoad);
   //Variables
   const imageId = cat.id;
   const userId = 'Cat Lover';
@@ -134,7 +136,8 @@ const Voting = () => {
               loading="lazy"
               className={style.randomCat}
               src={cat.url}
-              alt=""
+              alt="Cat foto for voting"
+              onLoad={() => setIsImageLoad(true)}
             />
           </div>
         ) : (
