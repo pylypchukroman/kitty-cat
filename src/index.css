@@ -3,20 +3,31 @@
 :root {
   --gap: 0.5em;
   --index: calc(1vw + 1vh);
-
   --main-black-color: #1d1d1d;
   --second-black-color: #8c8c8c;
   --main-pink-color: #ff868e;
   --second-pink-color: #fbe0dc;
+  --main-white-color: #ffffff;
+  --bcg-color: #f8f8f7;
+  --box-shadow: rgba(0, 0, 0, 0.25);
+  --images-gradient: rgba(255, 134, 142, 0.6);
+  --voting-link-bcg: #b4b7ff;
+  --breeds-link-bcg: #97eab9;
+  --gallery-link-bcg: #ffd280;
+  --links-border: rgba(255, 255, 255, 0.6);
+  --secong-bcg-pink-color: rgba(255, 134, 142, 0.3);
+  --secong-bcg-yellow-color: rgba(255, 210, 128, 0.3);
+  --secong-bcg-green-color: rgba(151, 234, 185, 0.3);
 }
 
 body {
   color: var(--main-black-color);
   font-family: Jost, Arial, Helvetica, sans-serif;
+  font-weight: 500;
   background: #e5e5e5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  --swiper-navigation-color: #ff868e;
+  --swiper-navigation-color: var(--main-pink-color);
 }
 
 code {

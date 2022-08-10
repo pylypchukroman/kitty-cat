@@ -10,33 +10,33 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f8f8f7;
+  background: var(--bcg-color);
   border-radius: 20px;
   outline: none;
   border: none;
   margin-right: 10px;
   cursor: pointer;
   transition: all 0.5s;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px var(--box-shadow);
 }
 .linkLikes:hover {
   transform: scale(1.07);
-  background: rgba(151, 234, 185, 0.3);
+  background: var(--secong-bcg-green-color);
 }
 .linkLikes:hover > .reactionIcon {
-  fill: #97eab9;
+  fill: var(--breeds-link-bcg);
 }
 .reactionIconLikes {
   width: 30px;
   height: 30px;
-  fill: #97eab9;
+  fill: var(--breeds-link-bcg);
 }
 /* Likes activlink styles */
 .activLike {
-  background-color: #97eab9;
+  background-color: var(--breeds-link-bcg);
 }
 .activLike > .reactionIconLikes {
-  fill: #fff;
+  fill: var(--main-white-color);
 }
 
 /* Favourites link styles */
@@ -46,34 +46,34 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f8f8f7;
+  background: var(--bcg-color);
   border-radius: 20px;
   outline: none;
   border: none;
   margin-right: 10px;
   cursor: pointer;
   transition: all 0.5s;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px var(--box-shadow);
 }
 .linkFavourites:hover {
   transform: scale(1.07);
-  background: rgba(255, 134, 142, 0.3);
+  background: var(--secong-bcg-pink-color);
 }
 .linkFavourites:hover > .reactionIcon {
-  fill: #ff868e;
+  fill: var(--main-pink-color);
 }
 .reactionIconFafourites {
   width: 30px;
   height: 30px;
-  fill: #ff868e;
+  fill: var(--main-pink-color);
 }
 
 /* Likes activlink styles */
 .activFavourites {
-  background-color: #ff868e;
+  background-color: var(--main-pink-color);
 }
 .activFavourites > .reactionIconFafourites {
-  fill: #fff;
+  fill: var(--main-white-color);
 }
 
 /* Dislike link styles */
@@ -83,31 +83,31 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #f8f8f7;
+  background: var(--bcg-color);
   border-radius: 20px;
   outline: none;
   border: none;
   cursor: pointer;
   transition: all 0.5s;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px var(--box-shadow);
 }
 .linkDislike:hover {
   transform: scale(1.07);
-  background: rgba(255, 210, 128, 0.3);
+  background: var(--secong-bcg-yellow-color);
 }
 .linkDislike:hover > .reactionIcon {
-  fill: #ffd280;
+  fill: var(--gallery-link-bcg);
 }
 .reactionIconDislikes {
   width: 30px;
   height: 30px;
-  fill: #ffd280;
+  fill: var(--gallery-link-bcg);
 }
 
 /* Dislike activlink styles */
 .activDislikes {
-  background-color: #ffd280;
+  background-color: var(--gallery-link-bcg);
 }
 .activDislikes > .reactionIconDislikes {
-  fill: #fff;
+  fill: var(--main-white-color);
 }

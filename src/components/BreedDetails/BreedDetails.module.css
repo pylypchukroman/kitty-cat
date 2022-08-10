@@ -3,14 +3,14 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  background: #ffffff;
+  background: var(--main-white-color);
   border-radius: 20px;
   padding: 20px;
   position: relative;
   width: 680px;
 }
 .navBarWrapper {
-  background: #ffffff;
+  background: var(--main-white-color);
   border-radius: 10px;
   width: 100%;
 }
@@ -36,7 +36,7 @@
 /* Information section */
 .breedInfornation {
   margin-top: 50px;
-  border: 2px solid #fbe0dc;
+  border: 2px solid var(--second-pink-color);
   border-radius: 20px;
   height: 250px;
   position: relative;
@@ -49,9 +49,9 @@
 }
 .titleWrapper {
   min-width: 200px;
-  border: 2px solid #fbe0dc;
+  border: 2px solid var(--second-pink-color);
   border-radius: 20px;
-  background: #ffffff;
+  background: var(--main-white-color);
   padding: 5px 40px;
   height: 60px;
   display: flex;
@@ -70,11 +70,9 @@
 
 /* Name styles */
 .name {
-  font-family: 'Jost';
-  font-weight: 500;
   font-size: 36px;
   line-height: 52px;
-  color: #1d1d1d;
+  color: var(--main-black-color);
 }
 
 /* Descriptions styles */
@@ -83,34 +81,27 @@
   padding: 10px 20px;
   text-align: center;
   margin-top: 40px;
-  font-family: 'Jost';
-  font-weight: 500;
   font-size: 20px;
   line-height: 29px;
-  color: #8c8c8c;
+  color: var(--second-black-color);
   overflow: scroll;
   height: 90px;
 }
 
 /* Titles styles */
 .title {
-  font-family: 'Jost';
-  font-style: normal;
-  font-weight: 500;
   font-size: 16px;
   line-height: 23px;
-  color: #1d1d1d;
+  color: var(--main-black-color);
   margin-bottom: 10px;
 }
 
 /* Title spans styles */
 .infoDescription {
-  font-family: 'Jost';
-  font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 23px;
-  color: #8c8c8c;
+  color: var(--second-black-color);
 }
 
 /* //Loader styles */
@@ -119,9 +110,5 @@
   justify-content: center;
   align-items: center;
   padding: 20px;
-  /* position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%); */
   height: 710px;
 }

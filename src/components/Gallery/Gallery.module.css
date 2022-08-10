@@ -1,7 +1,7 @@
 /* section styles */
 .navBar {
   display: flex;
-  background: #ffffff;
+  background: var(--main-white-color);
   border-radius: 20px;
   padding: 20px;
   flex-direction: column;
@@ -24,26 +24,26 @@
 .upoadBtn {
   width: 143px;
   height: 40px;
-  background: #fbe0dc;
+  background: var(--second-pink-color);
   border-radius: 10px;
   border: none;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px var(--box-shadow);
   transition: all 0.5s;
 }
 .upoadBtn:hover {
-  background-color: #ff868e;
+  background-color: var(--main-pink-color);
 }
 .upoadBtn:hover > .uloadBtnText {
-  color: #fff;
+  color: var(--main-white-color);
 }
 .upoadBtn:hover > .uploadIcon {
-  fill: #fff;
+  fill: var(--main-white-color);
   transform: scale(1.1);
 }
 .uploadIcon {
   width: 16px;
   height: 16px;
-  fill: #ff868e;
+  fill: var(--main-pink-color);
 }
 .uloadBtnText {
   font-weight: 500;
@@ -51,7 +51,7 @@
   line-height: 1.33;
   text-align: center;
   letter-spacing: 2px;
-  color: #ff868e;
+  color: var(--main-pink-color);
   margin-left: 10px;
 }
 
@@ -60,31 +60,31 @@
   width: 16px;
   height: 16px;
   transition: all 0.5s;
-  fill: #ff868e;
+  fill: var(--main-pink-color);
 }
 .reloadBtn:hover > .reloadBtnIcon {
   transform: rotate(360deg);
 }
 .reloadBtn:hover > .reloadBtnIcon {
-  fill: #fff;
+  fill: var(--main-white-color);
 }
 .reloadBtn:hover {
-  background-color: #ff868e;
+  background-color: var(--main-pink-color);
 }
 .reloadBtn {
   width: 40px;
   height: 40px;
-  background: #fbe0dc;
+  background: var(--second-pink-color);
   border-radius: 10px;
   border: none;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px var(--box-shadow);
   margin-left: 10px;
 }
 
 /* Selects section styles */
 .selectWrapper {
   margin-top: 10px;
-  background: #f8f8f7;
+  background: var(--bcg-color);
   border-radius: 20px;
   padding: 10px 20px;
   padding-bottom: 20px;
@@ -105,17 +105,17 @@
   font-weight: 500;
   font-size: 10px;
   line-height: 1.8;
-  color: #8c8c8c;
+  color: var(--second-black-color);
 }
 
 /* Select styles */
 .Select {
   width: 290px;
   height: 40px;
-  background: #ffffff;
+  background: var(--main-white-color);
   border-radius: 10px;
   border: none;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px var(--box-shadow);
   padding: 5px 10px;
   outline: none;
 }

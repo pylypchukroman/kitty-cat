@@ -7,7 +7,7 @@
 .searchInpute {
   width: 470px;
   height: 60px;
-  background: #ffffff;
+  background: var(--main-white-color);
   border-radius: 20px;
   outline: none;
   border: none;
@@ -21,7 +21,7 @@
   height: 40px;
   position: absolute;
   border: none;
-  background: #fbe0dc;
+  background: var(--second-pink-color);
   border-radius: 10px;
   top: 40px;
   right: 260px;
@@ -33,7 +33,7 @@
 .searchBtn {
   width: 60px;
   height: 60px;
-  background: #ffffff;
+  background: var(--main-white-color);
   border-radius: 20px;
   outline: none;
   border: none;

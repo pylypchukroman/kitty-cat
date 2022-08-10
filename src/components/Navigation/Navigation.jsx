@@ -21,7 +21,7 @@ const Navigation = () => {
         />
       </NavLink>
       <h2 className={styles.heroText}>Hi cat lover!</h2>
-      <p className={styles.subText}>Welcome to cat aplication</p>
+      <p className={styles.subText}>Welcome to world of cats</p>
       <div className={styles.linkWrapper}>
         <NavLink
           className={styles.votingBcg}
