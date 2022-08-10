@@ -6,12 +6,7 @@ import mainBcgImg from '../../images/main-bcf-img-min.png';
 const Home = () => {
   return (
     <>
-      <img
-        loading="lazy"
-        className={styles.mainBcgImg}
-        src={mainBcgImg}
-        alt="Main foto"
-      />
+      <img className={styles.mainBcgImg} src={mainBcgImg} alt="Main foto" />
     </>
   );
 };
