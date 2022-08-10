@@ -7,7 +7,7 @@ import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/kitty-cat/">
       <App />
     </BrowserRouter>
   </React.StrictMode>,
