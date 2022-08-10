@@ -15,6 +15,8 @@ import { useEffect, useState } from 'react';
 import spriteWhite from '../../icons/sprit-white.svg';
 //Loader
 import { Rings } from 'react-loader-spinner';
+//Notifications
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const Voting = () => {
   //Hooks
@@ -25,6 +27,25 @@ const Voting = () => {
   const imageId = cat.id;
   const userId = 'Cat Lover';
   const curlocation = location.pathname.replace('/', '');
+  //Notifications
+  Notify.init({
+    width: '550px',
+    position: 'right-bottom',
+    distance: '100px',
+    useIcon: false,
+    fontFamily: 'Jost',
+    fontSize: '13px',
+    cssAnimationStyle: 'zoom',
+    success: {
+      background: '#97eab9',
+    },
+    failure: {
+      background: '#ff868e',
+    },
+    warning: {
+      background: '#ffd280',
+    },
+  });
 
   //Image load logic
   useEffect(() => {
@@ -39,7 +60,9 @@ const Voting = () => {
   function onfavouritesBtnClick() {
     setIsLoading(false);
     console.log('click Fav');
-    favouriteImage(imageId, userId).then(({ data }) => data);
+    favouriteImage(imageId, userId).then(({ data }) =>
+      Notify.failure(data.message)
+    );
     getRandomCat().then(({ data }) => {
       setCat(data[0]);
       setIsLoading(true);
@@ -50,7 +73,7 @@ const Voting = () => {
   function onLikeBtnClick() {
     setIsLoading(false);
     console.log('click Like');
-    voteUp(imageId, userId).then(({ data }) => data);
+    voteUp(imageId, userId).then(({ data }) => Notify.success(data.message));
     getRandomCat().then(({ data }) => {
       setCat(data[0]);
       setIsLoading(true);
@@ -61,7 +84,7 @@ const Voting = () => {
   function onDislikeBtnClick() {
     setIsLoading(false);
     console.log('click Dis');
-    voteDown(imageId, userId).then(({ data }) => data);
+    voteDown(imageId, userId).then(({ data }) => Notify.warning(data.message));
     getRandomCat().then(({ data }) => {
       setCat(data[0]);
       setIsLoading(true);

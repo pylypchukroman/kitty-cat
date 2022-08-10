@@ -23,6 +23,7 @@ const Likes = () => {
   useEffect(() => {
     setIsLoading(false);
     getAllReactions().then(({ data }) => {
+      console.log(data);
       setBreeds(data.filter(cat => cat.value === 1));
       setIsLoading(true);
     });

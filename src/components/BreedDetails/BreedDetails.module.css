@@ -4,9 +4,10 @@
   justify-content: space-between;
   flex-direction: column;
   background: #ffffff;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: 20px;
   position: relative;
+  width: 680px;
 }
 .navBarWrapper {
   background: #ffffff;
@@ -18,7 +19,7 @@
 .imageWrapper {
   height: 360px;
   margin-top: 20px;
-  height: 400px;
+  height: 710px;
 }
 .randomCat {
   display: block;
@@ -110,4 +111,17 @@
   font-size: 16px;
   line-height: 23px;
   color: #8c8c8c;
+}
+
+/* //Loader styles */
+.loaderWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%); */
+  height: 710px;
 }

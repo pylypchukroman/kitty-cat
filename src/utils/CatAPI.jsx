@@ -80,13 +80,13 @@ async function getGallery(type, order, limit, breed) {
 
 //All Favourites list for Favourites Page
 async function getFavourite() {
-  const response = await axios.get('/favourites?limit=20');
+  const response = await axios.get('/favourites?limit=80');
   return response;
 }
 
 //All reactions(likes and dislikes)
 async function getAllReactions() {
-  const response = await axios.get('/votes?limit=45');
+  const response = await axios.get('/votes');
   return response;
 }
 
