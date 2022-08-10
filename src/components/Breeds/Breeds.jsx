@@ -13,6 +13,8 @@ import { useLocation } from 'react-router';
 import sprite from '../../icons/sprite.svg';
 //Loader
 import { Rings } from 'react-loader-spinner';
+//Notification
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const Breeds = () => {
   //Hooks
@@ -33,26 +35,47 @@ const Breeds = () => {
   const changeBreed = newBreed => {
     setSelectedBreed(newBreed);
   };
+
   //Form submit logic
   const handleSubmit = event => {
     event.preventDefault();
     if (selectedBreed === '') {
-      alert('empty');
+      Notify.failure('Please, enter breed name');
       return;
     }
     setIsLoading(false);
-    getSelectedBreed(selectedBreed, limit).then(({ data }) => {
-      setSelectedBreedList(data);
-      setIsLoading(true);
-    });
+    getSelectedBreed(selectedBreed, limit)
+      .then(({ data }) => {
+        if (data.length < 1) {
+          Notify.failure('Wrong breed name');
+        }
+        setSelectedBreedList(data);
+        setIsLoading(true);
+      })
+      .catch(err => {
+        let message =
+          typeof err.response !== 'undefined'
+            ? err.response.data.message
+            : err.message;
+        console.warn('error', message);
+      });
   };
+
   //Breeds list load logic
   useEffect(() => {
     setIsLoading(false);
-    getBreeds(limit).then(({ data }) => {
-      setBreeds(data);
-      setIsLoading(true);
-    });
+    getBreeds(limit)
+      .then(({ data }) => {
+        setBreeds(data);
+        setIsLoading(true);
+      })
+      .catch(err => {
+        let message =
+          typeof err.response !== 'undefined'
+            ? err.response.data.message
+            : err.message;
+        console.warn('error', message);
+      });
   }, [limit]);
 
   return (
@@ -67,6 +90,7 @@ const Breeds = () => {
                 className={style.searchInpute}
                 placeholder="Search for breeds by name"
                 onChange={event => changeBreed(event.target.value)}
+                value={selectedBreed}
               />
               <button type="button" className={style.searchInnerBtnWrapper}>
                 <svg className={style.searchInnerBtn}>
@@ -118,7 +142,7 @@ const Breeds = () => {
               selectedBreedList.map(selectedOneBreed => (
                 <li key={selectedOneBreed.id} className={style.item}>
                   <b className={style.selectedBreedText}>
-                    {selectedOneBreed.breeds[0].id}
+                    {selectedOneBreed.breeds[0].name}
                   </b>
                   <div className={style.imgWrapper}>
                     <img

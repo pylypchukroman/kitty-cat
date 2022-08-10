@@ -30,10 +30,18 @@ const Breed = () => {
   //Breed list load logic
   useEffect(() => {
     setIsloading(false);
-    getBreedDetails(breedId).then(({ data }) => {
-      setBreedDetails(data);
-      setIsloading(true);
-    });
+    getBreedDetails(breedId)
+      .then(({ data }) => {
+        setBreedDetails(data);
+        setIsloading(true);
+      })
+      .catch(err => {
+        let message =
+          typeof err.response !== 'undefined'
+            ? err.response.data.message
+            : err.message;
+        console.warn('error', message);
+      });
   }, [breedId]);
 
   return (

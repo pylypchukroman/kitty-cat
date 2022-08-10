@@ -12,6 +12,8 @@ import { useEffect, useState } from 'react';
 import sprite from '../../icons/sprite.svg';
 //Loader
 import { Rings } from 'react-loader-spinner';
+//Notification
+import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
 const Gallery = () => {
   //Hooks
@@ -44,19 +46,49 @@ const Gallery = () => {
   //reload page button logic
   const reloadPage = () => {
     setIsLoading(false);
-    getGallery(type, order, limit, breed).then(({ data }) => {
-      setGallery(data);
-      setIsLoading(true);
-    });
+    getGallery(type, order, limit, breed)
+      .then(({ data }) => {
+        setGallery(data);
+        setIsLoading(true);
+      })
+      .catch(err => {
+        let message =
+          typeof err.response !== 'undefined'
+            ? err.response.data.message
+            : err.message;
+        console.warn('error', message);
+      });
   };
   //Main gallery load logic
   useEffect(() => {
     setIsLoading(false);
-    getAllBreeds().then(({ data }) => setBreedsList(data.map(breed => breed)));
-    getGallery(type, order, limit, breed).then(({ data }) => {
-      setGallery(data);
-      setIsLoading(true);
-    });
+    getAllBreeds()
+      .then(({ data }) => setBreedsList(data.map(breed => breed)))
+      .catch(err => {
+        let message =
+          typeof err.response !== 'undefined'
+            ? err.response.data.message
+            : err.message;
+        console.warn('error', message);
+      });
+    getGallery(type, order, limit, breed)
+      .then(({ data }) => {
+        if (data.length < 1) {
+          Notify.failure('No images found');
+          setOrder('random');
+          setType('all');
+          setLimit('20');
+        }
+        setGallery(data);
+        setIsLoading(true);
+      })
+      .catch(err => {
+        let message =
+          typeof err.response !== 'undefined'
+            ? err.response.data.message
+            : err.message;
+        console.warn('error', message);
+      });
   }, [type, order, limit, breed]);
 
   return (

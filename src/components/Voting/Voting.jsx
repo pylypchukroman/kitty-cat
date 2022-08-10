@@ -28,7 +28,8 @@ const Voting = () => {
   const userId = 'Cat Lover';
   const curlocation = location.pathname.replace('/', '');
   //Notifications
-  Notify.init({
+  Notify.init();
+  Notify.merge({
     width: '550px',
     position: 'right-bottom',
     distance: '100px',
@@ -50,45 +51,74 @@ const Voting = () => {
   //Image load logic
   useEffect(() => {
     setIsLoading(false);
-    getRandomCat().then(({ data }) => {
-      setCat(data[0]);
-      setIsLoading(true);
-    });
+    getRandomCat()
+      .then(({ data }) => {
+        setCat(data[0]);
+        setIsLoading(true);
+      })
+      .catch(err => {
+        let message =
+          typeof err.response !== 'undefined'
+            ? err.response.data.message
+            : err.message;
+        console.warn('error', message);
+      });
   }, []);
 
   //Favourites button logic
   function onfavouritesBtnClick() {
     setIsLoading(false);
-    console.log('click Fav');
     favouriteImage(imageId, userId).then(({ data }) =>
       Notify.failure(data.message)
     );
-    getRandomCat().then(({ data }) => {
-      setCat(data[0]);
-      setIsLoading(true);
-    });
+    getRandomCat()
+      .then(({ data }) => {
+        setCat(data[0]);
+        setIsLoading(true);
+      })
+      .catch(err => {
+        let message =
+          typeof err.response !== 'undefined'
+            ? err.response.data.message
+            : err.message;
+        console.warn('error', message);
+      });
   }
 
   //Likes button logic
   function onLikeBtnClick() {
     setIsLoading(false);
-    console.log('click Like');
     voteUp(imageId, userId).then(({ data }) => Notify.success(data.message));
-    getRandomCat().then(({ data }) => {
-      setCat(data[0]);
-      setIsLoading(true);
-    });
+    getRandomCat()
+      .then(({ data }) => {
+        setCat(data[0]);
+        setIsLoading(true);
+      })
+      .catch(err => {
+        let message =
+          typeof err.response !== 'undefined'
+            ? err.response.data.message
+            : err.message;
+        console.warn('error', message);
+      });
   }
 
   //Dislikes button logic
   function onDislikeBtnClick() {
     setIsLoading(false);
-    console.log('click Dis');
     voteDown(imageId, userId).then(({ data }) => Notify.warning(data.message));
-    getRandomCat().then(({ data }) => {
-      setCat(data[0]);
-      setIsLoading(true);
-    });
+    getRandomCat()
+      .then(({ data }) => {
+        setCat(data[0]);
+        setIsLoading(true);
+      })
+      .catch(err => {
+        let message =
+          typeof err.response !== 'undefined'
+            ? err.response.data.message
+            : err.message;
+        console.warn('error', message);
+      });
   }
 
   return (

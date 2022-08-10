@@ -22,11 +22,18 @@ const Likes = () => {
   //Get likes list logic
   useEffect(() => {
     setIsLoading(false);
-    getAllReactions().then(({ data }) => {
-      console.log(data);
-      setBreeds(data.filter(cat => cat.value === 1));
-      setIsLoading(true);
-    });
+    getAllReactions()
+      .then(({ data }) => {
+        setBreeds(data.filter(cat => cat.value === 1));
+        setIsLoading(true);
+      })
+      .catch(err => {
+        let message =
+          typeof err.response !== 'undefined'
+            ? err.response.data.message
+            : err.message;
+        console.warn('error', message);
+      });
   }, []);
 
   return (

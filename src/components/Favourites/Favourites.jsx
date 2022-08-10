@@ -22,10 +22,18 @@ const Favourites = () => {
   //Favourites images load logic
   useEffect(() => {
     setIsLoading(false);
-    getFavourite().then(({ data }) => {
-      setBreeds(data);
-      setIsLoading(true);
-    });
+    getFavourite()
+      .then(({ data }) => {
+        setBreeds(data);
+        setIsLoading(true);
+      })
+      .catch(err => {
+        let message =
+          typeof err.response !== 'undefined'
+            ? err.response.data.message
+            : err.message;
+        console.warn('error', message);
+      });
   }, []);
 
   return (
