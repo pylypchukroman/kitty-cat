@@ -1,8 +1,12 @@
+//Styles
 import styles from './App.module.scss';
+//Components
 import { lazy, Suspense } from 'react';
 import { Redirect, Route, Switch } from 'react-router';
+//Loader
 import { Rings } from 'react-loader-spinner';
 
+//Imports
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const VotingPage = lazy(() => import('../pages/VotingPage/VotingPage'));
 const BreedsPage = lazy(() => import('../pages/BreedsPage/BreedsPage'));

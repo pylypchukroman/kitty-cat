@@ -7,13 +7,15 @@ import { getGallery } from 'utils/CatAPI';
 import { getAllBreeds } from 'utils/CatAPI';
 //Hooks
 import { useLocation } from 'react-router';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 //Images
 import sprite from '../../icons/sprite.svg';
 //Loader
 import { Rings } from 'react-loader-spinner';
 //Notification
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+//Fullscreen image viewer
+import ImageViewer from 'react-simple-image-viewer';
 
 const Gallery = () => {
   //Hooks
@@ -25,24 +27,33 @@ const Gallery = () => {
   const [gallery, setGallery] = useState([]);
   const [breedsList, setBreedsList] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  //Fullscreen image viewer hooks
+  const [currentImage, setCurrentImage] = useState(0);
+  const [isViewerOpen, setIsViewerOpen] = useState(false);
+
   //Variables
   const curlocation = location.pathname.replace('/', '');
+
   //Limit select logic
   const changeLimit = newLimit => {
     setLimit(newLimit);
   };
+
   //Type select logic
   const changeType = newType => {
     setType(newType);
   };
+
   //Order select logic
   const changeOrder = newOrder => {
     setOrder(newOrder);
   };
+
   //Breeds select logic
   const changeBreed = newBreed => {
     setBreed(newBreed);
   };
+
   //reload page button logic
   const reloadPage = () => {
     setIsLoading(false);
@@ -59,6 +70,7 @@ const Gallery = () => {
         console.warn('error', message);
       });
   };
+
   //Main gallery load logic
   useEffect(() => {
     setIsLoading(false);
@@ -90,9 +102,21 @@ const Gallery = () => {
         console.warn('error', message);
       });
   }, [type, order, limit, breed]);
+
   // Upload image logic
   const uploadImage = () => {
     alert('Page is coming, pls visit later');
+  };
+
+  //Fullscreen image viewer logic
+  const openImageViewer = useCallback(index => {
+    setCurrentImage(index);
+    setIsViewerOpen(true);
+  }, []);
+
+  const closeImageViewer = () => {
+    setCurrentImage(0);
+    setIsViewerOpen(false);
   };
 
   return (
@@ -191,7 +215,7 @@ const Gallery = () => {
         {isLoading ? (
           <ul className={style.gallery}>
             {gallery &&
-              gallery.map(item => (
+              gallery.map((item, index) => (
                 <li key={item.id} className={style.item}>
                   <img
                     loading="lazy"
@@ -200,9 +224,22 @@ const Gallery = () => {
                     width="100%"
                     height="100%"
                     alt={item.name}
+                    onClick={() => openImageViewer(index)}
                   />
                 </li>
               ))}
+            {isViewerOpen && (
+              <ImageViewer
+                src={gallery.map(image => image.url)}
+                currentIndex={currentImage}
+                disableScroll={true}
+                closeOnClickOutside={true}
+                onClose={closeImageViewer}
+                backgroundStyle={{
+                  backgroundColor: 'rgba(0,0,0,0.9)',
+                }}
+              />
+            )}
           </ul>
         ) : (
           <div className={style.loaderWrapper}>
