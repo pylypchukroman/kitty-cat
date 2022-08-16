@@ -1,5 +1,5 @@
 //Styles
-import styles from './VotingPage.module.css';
+import styles from './VotingPage.module.scss';
 //Components
 import Navigation from 'components/Navigation/Navigation';
 import Voting from 'components/Voting/Voting';

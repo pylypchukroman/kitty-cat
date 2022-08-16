@@ -1,5 +1,5 @@
 //Styles
-import style from './Voting.module.css';
+import style from './Voting.module.scss';
 //Components
 import HistoryBar from 'components/HistoryBar/HistoryBar';
 import ReactionNav from '../ReactionNav/ReactionNav';

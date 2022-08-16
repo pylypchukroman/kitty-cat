@@ -1,5 +1,5 @@
 //Styles
-import style from './Breeds.module.css';
+import style from './Breeds.module.scss';
 //Components
 import HistoryBar from 'components/HistoryBar/HistoryBar';
 import { Link } from 'react-router-dom';

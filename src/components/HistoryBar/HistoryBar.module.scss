@@ -14,14 +14,15 @@
   box-shadow: 0px 4px 4px var(--box-shadow);
   cursor: pointer;
   transition: background 0.5;
+  &:hover,
+  &:focus {
+    background: var(--main-pink-color);
+  }
+  &:hover > .returnBtnImg {
+    fill: var(--main-white-color);
+  }
 }
-.returnBtnWrapper:hover,
-.returnBtnWrapper:focus {
-  background: var(--main-pink-color);
-}
-.returnBtnWrapper:hover > .returnBtnImg {
-  fill: var(--main-white-color);
-}
+
 .returnBtnImg {
   width: 20px;
   height: 20px;

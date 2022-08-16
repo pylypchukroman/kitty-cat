@@ -1,5 +1,5 @@
 //Styles
-import style from './Likes.module.css';
+import style from './Likes.module.scss';
 //Components
 import ReactionNav from 'components/ReactionNav/ReactionNav';
 import HistoryBar from 'components/HistoryBar/HistoryBar';

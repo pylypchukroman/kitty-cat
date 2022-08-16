@@ -1,5 +1,5 @@
 //Styles
-import styles from './Navigation.module.css';
+import styles from './Navigation.module.scss';
 //Components
 import { NavLink } from 'react-router-dom';
 //Images

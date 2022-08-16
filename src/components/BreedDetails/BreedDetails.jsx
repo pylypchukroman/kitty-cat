@@ -1,5 +1,5 @@
 //Styles
-import style from './BreedDetails.module.css';
+import style from './BreedDetails.module.scss';
 //Components
 import HistoryBar from 'components/HistoryBar/HistoryBar';
 //API

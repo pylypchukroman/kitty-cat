@@ -1,5 +1,5 @@
 //Styles
-import style from './Favourites.module.css';
+import style from './Favourites.module.scss';
 //Components
 import ReactionNav from 'components/ReactionNav/ReactionNav';
 import HistoryBar from 'components/HistoryBar/HistoryBar';

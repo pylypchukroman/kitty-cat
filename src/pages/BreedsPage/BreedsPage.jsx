@@ -1,5 +1,5 @@
 //Styles
-import styles from './BreedsPage.module.css';
+import styles from './BreedsPage.module.scss';
 //Components
 import Navigation from 'components/Navigation/Navigation';
 import Breeds from 'components/Breeds/Breeds';

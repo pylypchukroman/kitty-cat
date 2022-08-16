@@ -18,16 +18,17 @@
   cursor: pointer;
   transition: all 0.5s;
   box-shadow: 0px 4px 4px var(--box-shadow);
+  &:hover,
+  &:focus {
+    transform: scale(1.07);
+    background: var(--secong-bcg-green-color);
+  }
+  &:hover > .reactionIcon,
+  &:focus > .reactionIcon {
+    fill: var(--breeds-link-bcg);
+  }
 }
-.linkLikes:hover,
-.linkLikes:focus {
-  transform: scale(1.07);
-  background: var(--secong-bcg-green-color);
-}
-.linkLikes:hover > .reactionIcon,
-.linkLikes:focus > .reactionIcon {
-  fill: var(--breeds-link-bcg);
-}
+
 .reactionIconLikes {
   width: 30px;
   height: 30px;
@@ -56,16 +57,17 @@
   cursor: pointer;
   transition: all 0.5s;
   box-shadow: 0px 4px 4px var(--box-shadow);
+  &:hover,
+  &:focus {
+    transform: scale(1.07);
+    background: var(--secong-bcg-pink-color);
+  }
+  &:hover > .reactionIcon,
+  &:focus > .reactionIcon {
+    fill: var(--main-pink-color);
+  }
 }
-.linkFavourites:hover,
-.linkFavourites:focus {
-  transform: scale(1.07);
-  background: var(--secong-bcg-pink-color);
-}
-.linkFavourites:hover > .reactionIcon,
-.linkFavourites:focus > .reactionIcon {
-  fill: var(--main-pink-color);
-}
+
 .reactionIconFafourites {
   width: 30px;
   height: 30px;
@@ -94,16 +96,17 @@
   cursor: pointer;
   transition: all 0.5s;
   box-shadow: 0px 4px 4px var(--box-shadow);
+  &:hover,
+  &:focus {
+    transform: scale(1.07);
+    background: var(--secong-bcg-yellow-color);
+  }
+  &:hover > .reactionIcon,
+  &:focus > .reactionIcon {
+    fill: var(--gallery-link-bcg);
+  }
 }
-.linkDislike:hover,
-.linkDislike:focus {
-  transform: scale(1.07);
-  background: var(--secong-bcg-yellow-color);
-}
-.linkDislike:hover > .reactionIcon,
-.linkDislike:focus > .reactionIcon {
-  fill: var(--gallery-link-bcg);
-}
+
 .reactionIconDislikes {
   width: 30px;
   height: 30px;

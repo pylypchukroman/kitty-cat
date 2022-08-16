@@ -1,5 +1,5 @@
 //Styles
-import styles from './ReactionNav.module.css';
+import styles from './ReactionNav.module.scss';
 //Images
 import sprite from '../../icons/sprite.svg';
 //Components

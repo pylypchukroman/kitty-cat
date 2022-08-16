@@ -1,5 +1,5 @@
 //Styles
-import styles from './LikesPage.module.css';
+import styles from './LikesPage.module.scss';
 //Components
 import Likes from 'components/Likes/Likes';
 import Navigation from 'components/Navigation/Navigation';

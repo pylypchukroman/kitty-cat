@@ -1,5 +1,5 @@
 //Styles
-import styles from './GalleryPage.module.css';
+import styles from './GalleryPage.module.scss';
 //Components
 import Navigation from 'components/Navigation/Navigation';
 import Gallery from 'components/Gallery/Gallery';

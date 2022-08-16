@@ -86,69 +86,70 @@
   overflow: hidden;
   transition: all 0.5s;
   position: relative;
-}
-.item:hover,
-.item:focus {
-  transform: scale(1.07);
-}
-.item:hover > .selectedBreedText {
-  display: flex;
-}
-.item:nth-child(1) {
-  grid-column: auto/span 1;
-  grid-row: auto/span 2;
-}
-.item:nth-child(4) {
-  grid-column: auto/span 2;
-  grid-row: auto/span 2;
-}
-.item:nth-child(8) {
-  grid-column: auto/span 1;
-  grid-row: auto/span 2;
-}
-.item:nth-child(9) {
-  grid-column: auto/span 2;
-  grid-row: auto/span 2;
-}
-.item:nth-child(11) {
-  grid-column: auto/span 1;
-  grid-row: auto/span 2;
-}
-.item:nth-child(14) {
-  grid-column: auto/span 2;
-  grid-row: auto/span 2;
-}
-.item:nth-child(18) {
-  grid-column: auto/span 1;
-  grid-row: auto/span 2;
-}
-.item:nth-child(19) {
-  grid-column: auto/span 2;
-  grid-row: auto/span 2;
-}
-.list {
-  height: 100%;
+  &:hover,
+  &:focus {
+    transform: scale(1.07);
+  }
+  &:hover > .selectedBreedText {
+    display: flex;
+  }
+  &:nth-child(1) {
+    grid-column: auto/span 1;
+    grid-row: auto/span 2;
+  }
+  &:nth-child(4) {
+    grid-column: auto/span 2;
+    grid-row: auto/span 2;
+  }
+  &:nth-child(8) {
+    grid-column: auto/span 1;
+    grid-row: auto/span 2;
+  }
+  &:nth-child(9) {
+    grid-column: auto/span 2;
+    grid-row: auto/span 2;
+  }
+  &:nth-child(11) {
+    grid-column: auto/span 1;
+    grid-row: auto/span 2;
+  }
+  &:nth-child(14) {
+    grid-column: auto/span 2;
+    grid-row: auto/span 2;
+  }
+  &:nth-child(18) {
+    grid-column: auto/span 1;
+    grid-row: auto/span 2;
+  }
+  &:nth-child(19) {
+    grid-column: auto/span 2;
+    grid-row: auto/span 2;
+  }
+  &:hover > .list::after,
+  &:focus > .list::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(var(--images-gradient), var(--images-gradient));
+  }
+  &:hover > .imgWrapper::after,
+  &:focus > .imgWrapper::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(var(--images-gradient), var(--images-gradient));
+  }
 }
 
-.item:hover > .list::after,
-.item:focus > .list::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
+//List styles
+.list {
   height: 100%;
-  background: linear-gradient(var(--images-gradient), var(--images-gradient));
-}
-.item:hover > .imgWrapper::after,
-.item:focus > .imgWrapper::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(var(--images-gradient), var(--images-gradient));
 }
 
 /* Inner item image styles */

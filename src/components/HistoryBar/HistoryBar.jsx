@@ -1,5 +1,5 @@
 //Styles
-import styles from './HistoryBar.module.css';
+import styles from './HistoryBar.module.scss';
 //Hooks
 import { useHistory } from 'react-router-dom';
 //Images

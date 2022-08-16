@@ -1,5 +1,5 @@
 //Styles
-import styles from './HomePage.module.css';
+import styles from './HomePage.module.scss';
 //Components
 import Navigation from 'components/Navigation/Navigation';
 import Home from 'components/Home/Home';

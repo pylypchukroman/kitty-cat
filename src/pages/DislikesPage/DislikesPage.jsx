@@ -1,5 +1,5 @@
 //Styles
-import styles from './DislikesPage.module.css';
+import styles from './DislikesPage.module.scss';
 //Components
 import Dislikes from 'components/Dislikes/Dislikes';
 import Navigation from 'components/Navigation/Navigation';

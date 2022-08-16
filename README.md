@@ -9,7 +9,7 @@ manipulate data from an API.
 # Tech Stack
 
 - JavaScript library - React
-- Styles - CSS
+- Styles - SCSS
 - HTTP client - [Axios](https://axios-http.com/)
 - Routs - [React Router](https://reactrouter.com/) v5.3
 - Swiper for Photos - [Swiper](https://swiperjs.com/react)

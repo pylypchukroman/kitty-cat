@@ -1,5 +1,5 @@
 //Styles
-import styles from './FavouritesPage.module.css';
+import styles from './FavouritesPage.module.scss';
 //Components
 import Favourites from 'components/Favourites/Favourites';
 import Navigation from 'components/Navigation/Navigation';

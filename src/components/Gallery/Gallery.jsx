@@ -1,5 +1,5 @@
 //Styles
-import style from './Gallery.module.css';
+import style from './Gallery.module.scss';
 //Components
 import HistoryBar from 'components/HistoryBar/HistoryBar';
 //API
