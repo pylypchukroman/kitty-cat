@@ -18,3 +18,5 @@ manipulate data from an API.
   [react-spinner-loader](https://www.npmjs.com/package/react-loader-spinner)
 - Fullscreen image viewer -
   [react-simple-image-viewer](https://github.com/specter256/react-simple-image-viewer#readme)
+
+Desktop version only(for now)
