@@ -4,7 +4,6 @@ import style from './BreedDetails.module.scss';
 import HistoryBar from 'components/HistoryBar/HistoryBar';
 //API
 import { getBreedDetails } from 'utils/CatAPI';
-//Hooks
 import { useEffect, useState } from 'react';
 import { useLocation, useParams } from 'react-router';
 //Swiper
@@ -28,6 +27,7 @@ const Breed = () => {
   const weight = breedInfo.length < 1 ? [] : breedInfo.weight.metric;
 
   //Breed list load logic
+
   useEffect(() => {
     setIsloading(false);
     getBreedDetails(breedId)
